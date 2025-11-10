@@ -84,8 +84,7 @@
     if (!aboutSection) return;
     aboutSection.hidden = false;
     aboutSection.setAttribute('aria-hidden', 'false');
-    const behavior = mqlReduce.matches ? 'auto' : 'smooth';
-    requestAnimationFrame(() => aboutSection.scrollIntoView({ behavior, block: 'start' }));
+    // 不自动滚动，直接显示在hero下面
   }
   function hideAbout() {
     if (!aboutSection) return;

@@ -190,12 +190,46 @@ body {
 .cta-media img { width: 100%; height: auto; border-radius: 12px; }
 
 /* Footer */
-.site-footer { background: #fff; border-top: 1px solid rgba(2,6,23,.06); }
+.site-footer { background: #000; color: #fff; border-top: 1px solid rgba(255,255,255,.1); }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding-top: 20px; }
+.footer-brand { color: #fff; }
+.footer-brand p { color: rgba(255,255,255,.8); }
+.footer-contact { color: #fff; }
+.footer-contact h3 { color: #fff; margin: 0 0 16px; font-size: inherit; }
+.footer-contact ul { color: rgba(255,255,255,.9); }
+.footer-contact a { color: rgba(255,255,255,.9); }
+.footer-contact a:hover { color: #fff; }
+.footer-partners { color: #fff; }
+.footer-partners h3 { color: #fff; margin: 0 0 16px; font-size: inherit; }
+.footer-partners .partners-grid { 
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; 
+  gap: 4px; 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+.footer-partners .card { 
+  background: rgba(255,255,255,.05); 
+  border: 1px solid rgba(255,255,255,.1); 
+  padding: 4px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  aspect-ratio: 1;
+  min-height: 45px;
+}
+.footer-partners .card img { 
+  filter: brightness(1.1); 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+}
 .footer-brand .brand-logo { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; }
 .footer-contact .qr { width: 140px; height: auto; border-radius: 8px; box-shadow: var(--shadow-sm); margin-top: 8px; }
-.footer-bottom { border-top: 1px dashed rgba(2,6,23,.08); padding: 14px 0 24px; text-align: center; color: var(--color-muted); }
-.footer-bottom a { color: inherit; text-decoration: none; margin-left: 12px; }
+.footer-bottom { border-top: 1px dashed rgba(255,255,255,.15); padding: 14px 0 24px; text-align: center; color: rgba(255,255,255,.7); }
+.footer-bottom a { color: rgba(255,255,255,.7); text-decoration: none; margin-left: 12px; }
+.footer-bottom a:hover { color: #fff; }
 
 /* Back to top */
 .back-to-top { position: fixed; right: 16px; bottom: 16px; width: 40px; height: 40px; border-radius: 999px; background: var(--color-primary); color: #fff; border: 0; box-shadow: var(--shadow-md); display: grid; place-items: center; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity .2s ease, transform .2s ease; transform: translateY(8px); z-index: 45; }
@@ -348,6 +382,7 @@ body {
   .partners-grid { grid-template-columns: repeat(2, 1fr); }
   .cta-inner { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .footer-partners .partners-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* Utility */
