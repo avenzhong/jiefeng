@@ -207,7 +207,9 @@ body {
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   gap: 14px;
   z-index: 70;
 }
@@ -224,13 +226,26 @@ body {
   box-shadow: var(--shadow-md);
   overflow: visible;
   cursor: pointer;
-  transition: width .4s ease, box-shadow .4s ease, background .4s ease;
+  transition: width .45s ease, box-shadow .45s ease, background .45s ease;
 }
 .floating-item:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
-.floating-item:is(:hover, :focus-visible) {
+.floating-phone {
+  transition: width .35s ease, box-shadow .35s ease, background .35s ease;
+}
+.floating-phone:is(:hover, :focus-visible) {
+  width: 220px;
+  background: linear-gradient(135deg, rgba(224,242,254,.9), rgba(186,230,253,.8));
+  box-shadow: 0 12px 24px rgba(15,23,42,.18);
+}
+.floating-wechat {
+  transition: width 1.85s ease, box-shadow 1.85s ease, background 1.85s ease;
+  z-index: 1;
+}
+.floating-wechat:is(:hover, :focus-visible) {
   width: 240px;
   box-shadow: 0 14px 30px rgba(15,23,42,.24);
   background: linear-gradient(135deg, rgba(224,242,254,.96), rgba(186,230,253,.88));
+  z-index: 2;
 }
 .floating-item .floating-icon {
   flex: 0 0 64px;
@@ -239,7 +254,9 @@ body {
   background: var(--color-primary);
   color: #fff;
   height: 100%;
-  transition: opacity .35s ease, transform .35s ease;
+}
+.floating-wechat .floating-icon {
+  transition: opacity .45s ease, transform .45s ease;
 }
 .floating-item .floating-icon svg {
   width: 28px;
@@ -254,20 +271,28 @@ body {
   padding: 0 18px;
   opacity: 0;
   transform: translateX(8px);
-  transition: opacity .35s ease .1s, transform .35s ease .1s;
   white-space: nowrap;
+  position: relative;
+  z-index: 2;
 }
-.floating-item:is(:hover, :focus-visible) .floating-text { opacity: 1; transform: translateX(0); }
-.floating-item:is(:hover, :focus-visible) .floating-icon { opacity: 0; transform: translateX(-16px) scale(.85); }
+.floating-item .floating-text {
+  transition: opacity .4s ease .1s, transform .4s ease .1s;
+}
+.floating-phone:is(:hover, :focus-visible) .floating-text { opacity: 1; transform: translateX(0); }
+.floating-wechat .floating-text {
+  transition: opacity 1.2s ease .3s, transform 1.2s ease .3s;
+}
+.floating-wechat:is(:hover, :focus-visible) .floating-text { opacity: 1; transform: translateX(0); }
+.floating-wechat:is(:hover, :focus-visible) .floating-icon { opacity: 0; transform: translateX(-18px) scale(.82); }
 .floating-item .floating-text strong { font-size: 15px; }
 .floating-item .floating-text span { font-size: 14px; color: var(--color-muted); }
 .floating-phone { text-decoration: none; }
 .floating-wechat { border: none; background: var(--color-card); padding: 0; font: inherit; text-align: left; }
 .floating-wechat .floating-qr {
   position: absolute;
-  right: calc(100% + 18px);
+  right: 52px;
   top: 50%;
-  transform: translateY(-50%) scale(.9);
+  transform: translateY(-50%) scale(.85);
   width: 150px;
   height: auto;
   border-radius: 12px;
@@ -277,9 +302,9 @@ body {
   padding: 6px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .2s ease, transform .2s ease;
+  transition: opacity 1.1s ease .22s, transform 1.1s ease .22s;
 }
-.floating-item:is(:hover, :focus-visible) .floating-qr { opacity: 1; transform: translateY(-50%) scale(1); }
+.floating-wechat:is(:hover, :focus-visible) .floating-qr { opacity: 1; transform: translateY(-50%) scale(1); }
 
 @media (max-width: 720px) {
   .floating-contact {
@@ -295,14 +320,13 @@ body {
     border-radius: 16px;
   }
   .floating-item .floating-icon { flex-basis: 54px; }
-  .floating-item:is(:hover, :focus-visible) { width: 200px; }
+  .floating-wechat:is(:hover, :focus-visible) { width: 200px; }
   .floating-wechat .floating-qr {
-    right: 0;
-    left: 50%;
-    transform: translate(-50%, calc(-100% - 24px)) scale(.9);
+    right: 36px;
+    transform: translateY(-50%) scale(.8);
   }
-  .floating-item:is(:hover, :focus-visible) .floating-qr {
-    transform: translate(-50%, calc(-100% - 24px)) scale(1);
+  .floating-wechat:is(:hover, :focus-visible) .floating-qr {
+    transform: translateY(-50%) scale(1);
   }
 }
 
