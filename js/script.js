@@ -138,7 +138,7 @@
     e.preventDefault(); e.stopPropagation();
     closeNav();
     closeAllDropdowns();
-    hideSea(); hideWare(); hideValue(); hideOverseas();
+    hideSea(); hideRailway(); hideWare(); hideValue(); hideOverseas();
     showAir();
   }));
 
@@ -162,8 +162,34 @@
   }
   $$("a[href='#fba-sea']").forEach(a => a.addEventListener('click', (e) => {
     e.preventDefault(); e.stopPropagation();
-    hideAir(); hideWare(); hideValue(); hideOverseas();
+    hideAir(); hideRailway(); hideWare(); hideValue(); hideOverseas();
     showSea();
+    closeNav();
+    closeAllDropdowns();
+  }));
+
+  // FBA Railway: only show on click, no smooth scroll
+  const railwaySec = document.getElementById('fba-railway');
+  function showRailway() {
+    if (!railwaySec) return;
+    railwaySec.hidden = false;
+    railwaySec.setAttribute('aria-hidden', 'false');
+    const prev = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+    railwaySec.scrollIntoView({ behavior: 'auto', block: 'start' });
+    history.replaceState(null, '', '#fba-railway');
+    setTimeout(() => { document.documentElement.style.scrollBehavior = prev; }, 50);
+    forceLoadLazy(railwaySec);
+  }
+  function hideRailway() {
+    if (!railwaySec) return;
+    railwaySec.hidden = true;
+    railwaySec.setAttribute('aria-hidden', 'true');
+  }
+  $$("a[href='#fba-railway']").forEach(a => a.addEventListener('click', (e) => {
+    e.preventDefault(); e.stopPropagation();
+    hideAir(); hideSea(); hideRailway(); hideWare(); hideValue(); hideOverseas();
+    showRailway();
     closeNav();
     closeAllDropdowns();
   }));
@@ -179,6 +205,9 @@
     }
     if (href !== '#fba-air') {
       a.addEventListener('click', () => hideAir());
+    }
+    if (href !== '#fba-railway') {
+      a.addEventListener('click', () => hideRailway());
     }
     if (href !== '#warehousing') {
       a.addEventListener('click', () => hideWare());
@@ -197,6 +226,7 @@
   // hash routing
   if (location.hash === '#fba-sea') showSea();
   if (location.hash === '#fba-air') showAir();
+  if (location.hash === '#fba-railway') showRailway();
   if (location.hash === '#warehousing') showWare();
   if (location.hash === '#value-added') showValue();
   if (location.hash === '#overseas') showOverseas();
@@ -204,6 +234,7 @@
     if (location.hash === '#about') showAbout(); else hideAbout();
     if (location.hash === '#fba-sea') showSea(); else hideSea();
     if (location.hash === '#fba-air') showAir(); else hideAir();
+    if (location.hash === '#fba-railway') showRailway(); else hideRailway();
     if (location.hash === '#warehousing') showWare(); else hideWare();
     if (location.hash === '#value-added') showValue(); else hideValue();
     if (location.hash === '#overseas') showOverseas(); else hideOverseas();
@@ -230,7 +261,7 @@
   }
   $$("a[href='#warehousing']").forEach(a => a.addEventListener('click', (e) => {
     e.preventDefault(); e.stopPropagation();
-    hideAir(); hideSea(); hideValue(); hideOverseas();
+    hideAir(); hideSea(); hideRailway(); hideValue(); hideOverseas();
     showWare();
     closeNav();
     closeAllDropdowns();
@@ -256,7 +287,7 @@
   }
   $$("a[href='#value-added']").forEach(a => a.addEventListener('click', (e) => {
     e.preventDefault(); e.stopPropagation();
-    hideAir(); hideSea(); hideWare(); hideOverseas();
+    hideAir(); hideSea(); hideRailway(); hideWare(); hideOverseas();
     showValue();
     closeNav();
     closeAllDropdowns();
@@ -282,7 +313,7 @@
   }
   $$("a[href='#overseas']").forEach(a => a.addEventListener('click', (e) => {
     e.preventDefault(); e.stopPropagation();
-    hideAir(); hideSea(); hideWare(); hideValue(); hideOverseas();
+    hideAir(); hideSea(); hideRailway(); hideWare(); hideValue();
     showOverseas();
     closeNav();
     closeAllDropdowns();
