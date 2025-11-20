@@ -142,8 +142,21 @@
     showAir();
   }));
 
-  // FBA Sea: only show on click, no smooth scroll
+  // 声明所有服务部分的元素变量 - 必须在使用前声明
   const seaSec = document.getElementById('fba-sea');
+  const railwaySec = document.getElementById('fba-railway');
+  const wareSec = document.getElementById('warehousing');
+  const valueSec = document.getElementById('value-added');
+  const overseasSec = document.getElementById('overseas');
+
+  console.log('=== Service section variables declared ===');
+  console.log('seaSec:', !!seaSec);
+  console.log('railwaySec:', !!railwaySec);
+  console.log('wareSec:', !!wareSec);
+  console.log('valueSec:', !!valueSec);
+  console.log('overseasSec:', !!overseasSec);
+
+  // FBA Sea: only show on click, no smooth scroll
   function showSea() {
     if (!seaSec) return;
     seaSec.hidden = false;
@@ -169,7 +182,6 @@
   }));
 
   // FBA Railway: only show on click, no smooth scroll
-  const railwaySec = document.getElementById('fba-railway');
   function showRailway() {
     if (!railwaySec) return;
     railwaySec.hidden = false;
@@ -242,7 +254,6 @@
   });
 
   // Warehousing & Customs: show on click, instant jump, hide others
-  const wareSec = document.getElementById('warehousing');
   function showWare() {
     if (!wareSec) return;
     wareSec.hidden = false;
@@ -268,7 +279,6 @@
   }));
 
   // Value-added: show on click, instant jump, hide others
-  const valueSec = document.getElementById('value-added');
   function showValue() {
     if (!valueSec) return;
     valueSec.hidden = false;
@@ -294,7 +304,6 @@
   }));
 
   // Overseas warehouse section
-  const overseasSec = document.getElementById('overseas');
   function showOverseas() {
     if (!overseasSec) return;
     overseasSec.hidden = false;
