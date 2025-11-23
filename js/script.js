@@ -78,6 +78,37 @@
     if (!isInside) closeAllDropdowns();
   });
 
+  // Company Profile section: reveal only when clicked
+  const companyProfileSection = document.getElementById('company-profile');
+  function showCompanyProfile() {
+    if (!companyProfileSection) return;
+    companyProfileSection.hidden = false;
+    companyProfileSection.setAttribute('aria-hidden', 'false');
+    // 滚动到公司简介部分
+    companyProfileSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', '#company-profile');
+  }
+  function hideCompanyProfile() {
+    if (!companyProfileSection) return;
+    companyProfileSection.hidden = true;
+    companyProfileSection.setAttribute('aria-hidden', 'true');
+  }
+  // Intercept clicks to #company-profile from any menu item
+  $$("a[href='#company-profile']").forEach(a => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    showCompanyProfile();
+    closeNav();
+    closeAllDropdowns();
+  }));
+
+  // Hide company profile when navigating to other anchors
+  $$(".site-nav a[href^='#']").forEach(a => {
+    const href = a.getAttribute('href');
+    if (href !== '#company-profile') {
+      a.addEventListener('click', () => hideCompanyProfile());
+    }
+  });
+
   // About section: reveal only when clicked
   const aboutSection = document.getElementById('about');
   function showAbout() {
@@ -564,4 +595,14 @@
   const y = new Date().getFullYear();
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(y);
+
+  // 调试：检查所有服务部分是否存在
+  console.log('=== Service sections check ===');
+  console.log('airSec:', !!airSec, airSec ? airSec.id : 'null');
+  console.log('seaSec:', !!seaSec, seaSec ? seaSec.id : 'null');
+  console.log('railwaySec:', !!railwaySec, railwaySec ? railwaySec.id : 'null');
+  console.log('wareSec:', !!wareSec, wareSec ? wareSec.id : 'null');
+  console.log('valueSec:', !!valueSec, valueSec ? valueSec.id : 'null');
+  console.log('overseasSec:', !!overseasSec, overseasSec ? overseasSec.id : 'null');
+  console.log('companyProfileSection:', !!companyProfileSection, companyProfileSection ? companyProfileSection.id : 'null');
 })();

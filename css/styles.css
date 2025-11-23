@@ -108,6 +108,76 @@ body {
   .about .about-gallery img { height: 200px; }
 }
 
+/* Company Profile */
+.company-profile {
+  background: #f8f9fa;
+}
+.company-profile h2 {
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 50px !important;
+  color: var(--color-text) !important;
+}
+.company-image {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.company-image img {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.company-image img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.15);
+}
+.company-intro {
+  background: #fff;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.company-intro p {
+  margin-bottom: 24px !important;
+  font-size: 17px !important;
+  color: #444 !important;
+  line-height: 1.8 !important;
+}
+.company-intro p:last-child {
+  margin-bottom: 0 !important;
+}
+.company-intro p strong {
+  color: var(--color-primary) !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+}
+@media (max-width: 768px) {
+  .company-profile {
+    padding: 60px 0 !important;
+  }
+  .company-profile h2 {
+    font-size: 36px !important;
+    margin-bottom: 30px !important;
+  }
+  .company-image img {
+    height: 250px !important;
+  }
+  .company-intro {
+    padding: 30px !important;
+    margin: 0 20px;
+  }
+  .company-intro p {
+    font-size: 15px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
 /* Core Business / Services */
 .core-business { background: #f8f9fa; }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
