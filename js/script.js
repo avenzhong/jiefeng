@@ -190,14 +190,19 @@
   // FBA Sea: only show on click, no smooth scroll
   function showSea() {
     if (!seaSec) return;
-    seaSec.hidden = false;
-    seaSec.setAttribute('aria-hidden', 'false');
-    const prev = document.documentElement.style.scrollBehavior;
-    document.documentElement.style.scrollBehavior = 'auto';
-    seaSec.scrollIntoView({ behavior: 'auto', block: 'start' });
-    history.replaceState(null, '', '#fba-sea');
-    setTimeout(() => { document.documentElement.style.scrollBehavior = prev; }, 50);
-    forceLoadLazy(seaSec);
+    // 先切换到首页模式，确保所有内容可见
+    showHome();
+    // 短暂延迟后显示服务区块
+    setTimeout(() => {
+      seaSec.hidden = false;
+      seaSec.setAttribute('aria-hidden', 'false');
+      const prev = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      seaSec.scrollIntoView({ behavior: 'auto', block: 'start' });
+      history.replaceState(null, '', '#fba-sea');
+      setTimeout(() => { document.documentElement.style.scrollBehavior = prev; }, 50);
+      forceLoadLazy(seaSec);
+    }, 50);
   }
   function hideSea() {
     if (!seaSec) return;
@@ -215,14 +220,19 @@
   // FBA Railway: only show on click, no smooth scroll
   function showRailway() {
     if (!railwaySec) return;
-    railwaySec.hidden = false;
-    railwaySec.setAttribute('aria-hidden', 'false');
-    const prev = document.documentElement.style.scrollBehavior;
-    document.documentElement.style.scrollBehavior = 'auto';
-    railwaySec.scrollIntoView({ behavior: 'auto', block: 'start' });
-    history.replaceState(null, '', '#fba-railway');
-    setTimeout(() => { document.documentElement.style.scrollBehavior = prev; }, 50);
-    forceLoadLazy(railwaySec);
+    // 先切换到首页模式，确保所有内容可见
+    showHome();
+    // 短暂延迟后显示服务区块
+    setTimeout(() => {
+      railwaySec.hidden = false;
+      railwaySec.setAttribute('aria-hidden', 'false');
+      const prev = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      railwaySec.scrollIntoView({ behavior: 'auto', block: 'start' });
+      history.replaceState(null, '', '#fba-railway');
+      setTimeout(() => { document.documentElement.style.scrollBehavior = prev; }, 50);
+      forceLoadLazy(railwaySec);
+    }, 50);
   }
   function hideRailway() {
     if (!railwaySec) return;
@@ -605,4 +615,109 @@
   console.log('valueSec:', !!valueSec, valueSec ? valueSec.id : 'null');
   console.log('overseasSec:', !!overseasSec, overseasSec ? overseasSec.id : 'null');
   console.log('companyProfileSection:', !!companyProfileSection, companyProfileSection ? companyProfileSection.id : 'null');
+
+  // Single Page Application Mode - Home vs Reasons
+  const heroSec = document.getElementById('hero');
+  const companyProfileSec = document.getElementById('company-profile');
+  const coreBusinessSec = document.getElementById('core-business');
+  const aboutSec = document.getElementById('about');
+  const advantagesSec = document.getElementById('advantages');
+  const partnersSec = document.querySelector('.partners-section');
+  const contactSec = document.getElementById('contact');
+  const reasonsSec = document.getElementById('reasons');
+  const newsSec = document.getElementById('news');
+
+  // 默认首页区块
+  const homeSections = [heroSec, companyProfileSec, coreBusinessSec, advantagesSec, partnersSec, contactSec];
+  // 需要按需显示的区块
+  const dynamicSections = [aboutSec, newsSec, seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec];
+
+  function showHome() {
+    // 显示所有首页区块
+    homeSections.forEach(sec => {
+      if (sec) {
+        sec.hidden = false;
+        sec.setAttribute('aria-hidden', 'false');
+      }
+    });
+    // 隐藏所有动态区块
+    dynamicSections.forEach(sec => {
+      if (sec) {
+        sec.hidden = true;
+        sec.setAttribute('aria-hidden', 'true');
+      }
+    });
+    // 移除body上的特殊模式类
+    document.body.classList.remove('reasons-mode');
+    history.replaceState(null, '', '#');
+  }
+
+  function showReasons() {
+    // 隐藏所有其他区块，但保留轮播图、选择理由和底部
+    [...homeSections, ...dynamicSections].forEach(sec => {
+      if (sec && sec !== heroSec && sec !== contactSec) {
+        sec.hidden = true;
+        sec.setAttribute('aria-hidden', 'true');
+      }
+    });
+    // 显示轮播图区块
+    if (heroSec) {
+      heroSec.hidden = false;
+      heroSec.setAttribute('aria-hidden', 'false');
+    }
+    // 显示选择理由区块
+    if (reasonsSec) {
+      reasonsSec.hidden = false;
+      reasonsSec.setAttribute('aria-hidden', 'false');
+    }
+    // 显示底部联系区块
+    if (contactSec) {
+      contactSec.hidden = false;
+      contactSec.setAttribute('aria-hidden', 'false');
+    }
+    // 使用replaceState避免滚动问题
+    history.replaceState(null, '', '#reasons');
+    // 添加特殊模式类用于样式控制
+    document.body.classList.add('reasons-mode');
+    // 滚动到顶部确保从顶部开始显示
+    window.scrollTo(0, 0);
+  }
+
+  // 首页点击处理
+  $$("a[href='#hero']").forEach(a => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    showHome();
+    closeNav();
+    closeAllDropdowns();
+  }));
+
+  // 选择理由点击处理
+  $$("a[href='#reasons']").forEach(a => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    showReasons();
+    closeNav();
+    closeAllDropdowns();
+  }));
+
+  // 其他导航链接处理（确保切换到首页模式）
+  $$(".site-nav a[href^='#']").forEach(a => {
+    const href = a.getAttribute('href');
+    if (href !== '#hero' && href !== '#reasons') {
+      a.addEventListener('click', () => {
+        showHome(); // 切换到首页模式，显示所有内容
+      });
+    }
+  });
+
+  // 初始化页面状态
+  function initializePageState() {
+    if (location.hash === '#reasons') {
+      showReasons();
+    } else {
+      showHome();
+    }
+  }
+
+  // 页面加载时初始化状态
+  initializePageState();
 })();
