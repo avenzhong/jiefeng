@@ -717,39 +717,65 @@
   }
 
   function showReasons() {
-    // 隐藏所有其他区块，但保留轮播图、选择理由和底部
-    [...homeSections, ...dynamicSections].forEach(sec => {
-      if (sec && sec !== heroSec && sec !== contactSec && sec !== reasonsSec) {
+    if (!reasonsSec) return;
+    // 直接获取所有需要隐藏的section元素
+    const heroSec = document.getElementById('hero');
+    const companyProfileSec = document.getElementById('company-profile');
+    const coreBusinessSec = document.getElementById('core-business');
+    const advantagesSec = document.getElementById('advantages');
+    const partnersSec = document.querySelector('.partners-section');
+    const contactSec = document.getElementById('contact');
+    const aboutSec = document.getElementById('about');
+    const newsSec = document.getElementById('news');
+    
+    // 所有需要隐藏的区块（包括所有产品服务）
+    const allSections = [
+      companyProfileSec, coreBusinessSec, advantagesSec, partnersSec,
+      aboutSec, newsSec,
+      seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
+    ];
+    
+    // 先隐藏所有区块
+    allSections.forEach(sec => {
+      if (sec) {
         sec.hidden = true;
         sec.setAttribute('aria-hidden', 'true');
         sec.style.display = 'none';
       }
     });
-    // 显示轮播图区块
+    
+    // 确保轮播图始终显示
     if (heroSec) {
       heroSec.hidden = false;
       heroSec.setAttribute('aria-hidden', 'false');
       heroSec.style.display = '';
     }
-    // 显示选择理由区块
-    if (reasonsSec) {
-      reasonsSec.hidden = false;
-      reasonsSec.setAttribute('aria-hidden', 'false');
-      reasonsSec.style.display = '';
-    }
+    
     // 显示底部联系区块
     if (contactSec) {
       contactSec.hidden = false;
       contactSec.setAttribute('aria-hidden', 'false');
       contactSec.style.display = '';
     }
-    // 使用replaceState避免滚动问题
-    history.replaceState(null, '', '#reasons');
-    // 添加特殊模式类用于样式控制
-    document.body.classList.add('reasons-mode');
+    
+    // 移除body上的特殊模式类
+    document.body.classList.remove('reasons-mode');
     document.body.classList.remove('company-profile-mode');
-    // 滚动到顶部确保从顶部开始显示
+    
+    // 显示选择理由区块
+    reasonsSec.hidden = false;
+    reasonsSec.setAttribute('aria-hidden', 'false');
+    reasonsSec.style.display = '';
+    
+    // 滚动到顶部，然后滚动到选择理由内容
     window.scrollTo(0, 0);
+    setTimeout(() => {
+      const prev = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      reasonsSec.scrollIntoView({ behavior: 'auto', block: 'start' });
+      history.replaceState(null, '', '#reasons');
+      setTimeout(() => { document.documentElement.style.scrollBehavior = prev; }, 50);
+    }, 100);
   }
 
   function showCompanyProfileMode() {

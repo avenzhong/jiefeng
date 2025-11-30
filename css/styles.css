@@ -531,7 +531,7 @@ body.reasons-mode .slide {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  gap: 40px;
+  gap: 20px;
   align-items: center;
   justify-items: center;
   width: 100%;
@@ -543,6 +543,7 @@ body.reasons-mode .slide {
   width: 100%;
 }
 .reason-item img {
+  width: 90%;
   max-width: 90%;
   max-height: 300px;
   height: auto;
@@ -552,15 +553,11 @@ body.reasons-mode .slide {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 中间图片放大效果 */
+/* 中间图片更大以便看清，但宽度与上下两张完全一致 */
 .reasons-grid .reason-item:nth-child(2) img {
-  max-width: 95%;
-  max-height: 400px;
-  transform: scale(1.1);
-}
-
-.reasons-grid .reason-item:nth-child(2) img:hover {
-  transform: scale(1.12);
+  width: 90% !important;
+  max-width: 90% !important;
+  max-height: 500px;
 }
 .reason-item img:hover {
   transform: scale(1.02);
@@ -778,7 +775,7 @@ body.reasons-mode .slide {
 @media (max-width: 1024px) {
   .card-grid.four { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(3, 1fr); }
-  .reasons-grid { gap: 30px; }
+  .reasons-grid { gap: 20px; }
   .partners-section .partners-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .partners-grid { grid-template-columns: repeat(4, 1fr); }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
