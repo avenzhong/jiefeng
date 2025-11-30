@@ -514,12 +514,14 @@ body.reasons-mode .slide {
 }
 
 /* Reasons Section */
-.reasons-section { background: #fff; padding: 40px 0; min-height: 100vh; display: grid; place-items: center; }
+.reasons-section { 
+  background: #fff; 
+  padding: 80px 0;
+}
 .reasons-section .container {
-  display: grid;
-  place-items: center;
-  height: 100%;
-  width: 100%;
+  width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
 }
 .reasons-section .section-title {
   text-align: center;
@@ -527,6 +529,29 @@ body.reasons-mode .slide {
   font-size: 32px;
   color: #333;
 }
+
+.fba-address-section {
+  background: #fff;
+  padding: 60px 0;
+}
+.fba-address-section .container {
+  width: var(--container);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.fba-address-section .section-title {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+}
+
+.reasons-right {
+  width: 100%;
+}
+
 .reasons-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -535,7 +560,7 @@ body.reasons-mode .slide {
   align-items: center;
   justify-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 100%;
 }
 .reason-item {
   display: grid;
@@ -562,6 +587,165 @@ body.reasons-mode .slide {
 .reason-item img:hover {
   transform: scale(1.02);
   box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}
+
+/* 亚马逊仓库地址样式 */
+.fba-address-content {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.fba-tip {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.fba-tip-text {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.fba-address-list {
+  margin-top: 40px;
+}
+
+.fba-country {
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fba-country-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: #fff;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.fba-country-header:hover {
+  background: #f8f9fa;
+}
+
+.fba-country-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #ff6600;
+  color: #fff;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.fba-country-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: 600;
+  flex: 1;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.fba-country-toggle {
+  font-size: 14px;
+  color: #666;
+  transition: transform 0.3s;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.fba-country.expanded .fba-country-toggle {
+  transform: rotate(180deg);
+}
+
+.fba-country-content {
+  padding: 20px;
+  background: #fff;
+}
+
+.fba-table-wrapper {
+  overflow-x: auto;
+  margin-top: 0;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+
+.fba-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.fba-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.fba-table-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.fba-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.fba-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #fff;
+  min-width: 800px;
+}
+
+.fba-table thead {
+  background: #f8f9fa;
+}
+
+.fba-table th {
+  padding: 14px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border: 1px solid #e5e7eb;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.fba-table td {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.fba-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.fba-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.fba-table tbody tr:nth-child(even):hover {
+  background: #f0f0f0;
 }
 
 /* Partners */
@@ -794,6 +978,16 @@ body.reasons-mode .slide {
   .brand-name { font-size: 24px; }
   .card-grid.three { grid-template-columns: 1fr; }
   .reasons-grid { gap: 20px; }
+  .fba-address-section { padding: 40px 0; }
+  .fba-address-section .section-title { font-size: 24px; }
+  .fba-address-content { padding: 0; }
+  .fba-country { margin-bottom: 15px; }
+  .fba-country-header { padding: 12px 15px; }
+  .fba-country-number { width: 28px; height: 28px; font-size: 14px; margin-right: 12px; }
+  .fba-country-header h3 { font-size: 16px; }
+  .fba-country-content { padding: 15px; }
+  .fba-table { font-size: 12px; min-width: 600px; }
+  .fba-table th, .fba-table td { padding: 10px 8px; }
   .partners-section .partners-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .partners-section .partners-grid .card { padding: 16px; }
   .partners-grid { grid-template-columns: repeat(2, 1fr); }
@@ -805,3 +999,109 @@ body.reasons-mode .slide {
 
 /* Utility */
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* --- 1:1 模仿九方通逊 CSS 样式开始 --- */
+    
+    /* 容器设置 */
+    .section.fba-address-section {
+      background: #fff;
+      padding: 40px 0;
+      font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+      color: #333;
+      font-size: 14px;
+  }
+  
+  .container {
+      width: 1200px; /* PC端标准宽度 */
+      margin: 0 auto;
+  }
+
+  /* 顶部大标题 */
+  .section-title {
+      font-size: 24px;
+      font-weight: normal;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      color: #333;
+  }
+
+  /* 温馨提示框 (黄色背景) */
+  .fba-tip-box {
+      background-color: #fff8e5;
+      border: 1px solid #ffebcc;
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 4px;
+      color: #8a6d3b;
+      line-height: 1.8;
+  }
+  
+  .fba-tip-box strong {
+      color: #a94442; /* 深红色强调 */
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+  }
+
+  .fba-tip-text {
+      margin: 0;
+  }
+
+  /* 国家标题 (模拟Tab头样式) */
+  .fba-country h3 {
+      display: inline-block;
+      background-color: #f60; /* 九方橙 */
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 20px;
+      border-radius: 4px 4px 0 0;
+      margin-bottom: 0;
+      margin-top: 0;
+  }
+  
+  /* 配合标题的下划线装饰 */
+  .fba-country-header-line {
+      border-bottom: 2px solid #f60;
+      margin-bottom: 15px;
+  }
+
+  /* 表格样式 */
+  .fba-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+      margin-bottom: 40px; /* 每个表格之间的间距 */
+  }
+
+  .fba-table th, 
+  .fba-table td {
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 13px;
+  }
+
+  /* 表头样式 */
+  .fba-table th {
+      background-color: #f2f2f2;
+      color: #333;
+      font-weight: bold;
+      white-space: nowrap; /* 防止表头换行 */
+  }
+
+  /* 隔行变色 (斑马纹) */
+  .fba-table tbody tr:nth-child(even) {
+      background-color: #fafafa;
+  }
+
+  /* 鼠标悬停高亮 */
+  .fba-table tbody tr:hover {
+      background-color: #fffdf5; /* 淡淡的黄色悬停 */
+  }
+
+  /* 响应式处理（简单适配） */
+  .fba-table-wrapper {
+      overflow-x: auto;
+  }

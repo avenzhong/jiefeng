@@ -150,11 +150,12 @@
     const reasonsSec = document.getElementById('reasons');
     const aboutSec = document.getElementById('about');
     const newsSec = document.getElementById('news');
+    const fbaAddressSec = document.getElementById('fba-address');
     
     // 所有需要隐藏的区块（包括所有产品服务）
     const allSections = [
       companyProfileSec, coreBusinessSec, advantagesSec, partnersSec,
-      reasonsSec, aboutSec, newsSec,
+      reasonsSec, aboutSec, newsSec, fbaAddressSec,
       seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
     ];
     
@@ -427,9 +428,11 @@
     const valueSec = document.getElementById('value-added');
     const overseasSec = document.getElementById('overseas');
     
+    const fbaAddressSec = document.getElementById('fba-address');
+    
     // 隐藏所有其他区块，但保留轮播图、新闻和底部联系信息
     const allSections = [companyProfileSec, coreBusinessSec, advantagesSec, partnersSec, 
-                         reasonsSec, aboutSec, seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec];
+                         reasonsSec, aboutSec, fbaAddressSec, seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec];
     allSections.forEach(sec => {
       if (sec && sec !== heroSec && sec !== contactSec) {
         sec.hidden = true;
@@ -688,6 +691,8 @@
   const dynamicSections = [aboutSec, newsSec, seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec];
 
   function showHome() {
+    const fbaAddressSec = document.getElementById('fba-address');
+    
     // 显示所有首页区块（包括轮播图、公司简介、核心业务、企业优势、合作伙伴、底部）
     homeSections.forEach(sec => {
       if (sec) {
@@ -701,6 +706,12 @@
       reasonsSec.hidden = false;
       reasonsSec.setAttribute('aria-hidden', 'false');
       reasonsSec.style.display = '';
+    }
+    // 显示亚马逊仓库地址（在首页时也显示）
+    if (fbaAddressSec) {
+      fbaAddressSec.hidden = false;
+      fbaAddressSec.setAttribute('aria-hidden', 'false');
+      fbaAddressSec.style.display = '';
     }
     // 隐藏所有动态区块（产品服务详情、新闻等）
     dynamicSections.forEach(sec => {
@@ -727,11 +738,12 @@
     const contactSec = document.getElementById('contact');
     const aboutSec = document.getElementById('about');
     const newsSec = document.getElementById('news');
+    const fbaAddressSec = document.getElementById('fba-address');
     
     // 所有需要隐藏的区块（包括所有产品服务）
     const allSections = [
       companyProfileSec, coreBusinessSec, advantagesSec, partnersSec,
-      aboutSec, newsSec,
+      aboutSec, newsSec, fbaAddressSec,
       seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
     ];
     
@@ -778,7 +790,74 @@
     }, 100);
   }
 
+  function showFbaAddress() {
+    const fbaAddressSec = document.getElementById('fba-address');
+    if (!fbaAddressSec) return;
+    
+    // 直接获取所有需要隐藏的section元素
+    const heroSec = document.getElementById('hero');
+    const companyProfileSec = document.getElementById('company-profile');
+    const coreBusinessSec = document.getElementById('core-business');
+    const advantagesSec = document.getElementById('advantages');
+    const partnersSec = document.querySelector('.partners-section');
+    const contactSec = document.getElementById('contact');
+    const aboutSec = document.getElementById('about');
+    const newsSec = document.getElementById('news');
+    const reasonsSec = document.getElementById('reasons');
+    
+    // 所有需要隐藏的区块（包括所有产品服务）
+    const allSections = [
+      companyProfileSec, coreBusinessSec, advantagesSec, partnersSec,
+      aboutSec, newsSec, reasonsSec,
+      seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
+    ];
+    
+    // 先隐藏所有区块
+    allSections.forEach(sec => {
+      if (sec) {
+        sec.hidden = true;
+        sec.setAttribute('aria-hidden', 'true');
+        sec.style.display = 'none';
+      }
+    });
+    
+    // 确保轮播图始终显示
+    if (heroSec) {
+      heroSec.hidden = false;
+      heroSec.setAttribute('aria-hidden', 'false');
+      heroSec.style.display = '';
+    }
+    
+    // 显示底部联系区块
+    if (contactSec) {
+      contactSec.hidden = false;
+      contactSec.setAttribute('aria-hidden', 'false');
+      contactSec.style.display = '';
+    }
+    
+    // 移除body上的特殊模式类
+    document.body.classList.remove('reasons-mode');
+    document.body.classList.remove('company-profile-mode');
+    
+    // 显示亚马逊仓库地址区块
+    fbaAddressSec.hidden = false;
+    fbaAddressSec.setAttribute('aria-hidden', 'false');
+    fbaAddressSec.style.display = '';
+    
+    // 滚动到顶部，然后滚动到亚马逊仓库地址内容
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      const prev = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      fbaAddressSec.scrollIntoView({ behavior: 'auto', block: 'start' });
+      history.replaceState(null, '', '#fba-address');
+      setTimeout(() => { document.documentElement.style.scrollBehavior = prev; }, 50);
+    }, 100);
+  }
+
   function showCompanyProfileMode() {
+    const fbaAddressSec = document.getElementById('fba-address');
+    
     // 隐藏所有其他区块，但保留轮播图、公司简介和底部
     [...homeSections, ...dynamicSections].forEach(sec => {
       if (sec && sec !== heroSec && sec !== companyProfileSec && sec !== contactSec) {
@@ -787,6 +866,19 @@
         sec.style.display = 'none';
       }
     });
+    
+    // 隐藏fba-address section和reasons section
+    if (fbaAddressSec) {
+      fbaAddressSec.hidden = true;
+      fbaAddressSec.setAttribute('aria-hidden', 'true');
+      fbaAddressSec.style.display = 'none';
+    }
+    if (reasonsSec) {
+      reasonsSec.hidden = true;
+      reasonsSec.setAttribute('aria-hidden', 'true');
+      reasonsSec.style.display = 'none';
+    }
+    
     // 显示轮播图区块
     if (heroSec) {
       heroSec.hidden = false;
@@ -839,6 +931,14 @@
     closeAllDropdowns();
   }));
 
+  // 亚马逊仓库地址点击处理
+  $$("a[href='#fba-address']").forEach(a => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    showFbaAddress();
+    closeNav();
+    closeAllDropdowns();
+  }));
+
   // 公司简介点击处理
   $$("a[href='#company-profile']").forEach(a => a.addEventListener('click', (e) => {
     e.preventDefault();
@@ -850,7 +950,7 @@
   // 其他导航链接处理（确保切换到首页模式）
   $$(".site-nav a[href^='#']").forEach(a => {
     const href = a.getAttribute('href');
-    if (href !== '#hero' && href !== '#reasons' && href !== '#company-profile' && href !== '#news') {
+    if (href !== '#hero' && href !== '#reasons' && href !== '#company-profile' && href !== '#news' && href !== '#fba-address') {
       a.addEventListener('click', () => {
         showHome(); // 切换到首页模式，显示所有内容
       });
@@ -863,6 +963,8 @@
       showReasons();
     } else if (location.hash === '#company-profile') {
       showCompanyProfileMode();
+    } else if (location.hash === '#fba-address') {
+      showFbaAddress();
     } else {
       showHome();
     }
@@ -877,6 +979,8 @@
       showCompanyProfileMode();
     } else if (location.hash === '#reasons') {
       showReasons();
+    } else if (location.hash === '#fba-address') {
+      showFbaAddress();
     } else if (location.hash === '#news' || location.hash.match(/^#news-/)) {
       if (!handleNewsHash(true)) {
         showNews({ expand: false, scroll: true, updateHash: false });
@@ -898,3 +1002,22 @@
     }
   });
 })();
+
+// 折叠/展开国家区块函数
+function toggleCountry(header) {
+  const country = header.closest('.fba-country');
+  const content = country.querySelector('.fba-country-content');
+  const toggle = header.querySelector('.fba-country-toggle');
+  
+  if (country.classList.contains('expanded')) {
+    // 折叠
+    content.style.display = 'none';
+    country.classList.remove('expanded');
+    toggle.textContent = '▼';
+  } else {
+    // 展开
+    content.style.display = 'block';
+    country.classList.add('expanded');
+    toggle.textContent = '▲';
+  }
+}
