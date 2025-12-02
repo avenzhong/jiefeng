@@ -248,7 +248,7 @@ body {
 
 /* Advantages */
 .advantages { background: #fff; }
-.advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.advantages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .advantage-item { 
   background: var(--color-card); 
   border-radius: var(--radius); 
