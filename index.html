@@ -668,343 +668,644 @@
       </section>
 
       <!-- 亚马逊FBA仓库地址大全 -->
-      <section id="fba-address" class="section fba-address-section" aria-label="亚马逊FBA仓库地址大全">
+      <section id="fba-address" class="section fba-address-section" aria-label="亚马逊仓库地址">
         <div class="container">
-          <div class="section-header">
-            <span class="section-label">FBA WAREHOUSE</span>
             <h2 class="section-title">亚马逊FBA仓库地址大全</h2>
-          </div>
-          
-          <div class="fba-content">
-            <p style="text-align: center; margin-bottom: 40px; color: #666; font-size: 16px; line-height: 1.8;">
-              以下为亚马逊主要FBA仓库地址信息，供您发货参考。仓库地址可能随时更新，请以亚马逊卖家后台实际显示为准。
-            </p>
+            
+            <div class="fba-address-content">
+                <div class="fba-tip-box">
+                    <strong>快速查找亚马逊仓库详细地址小贴士：</strong>
+                    <p class="fba-tip-text">点开需要查找国家的地址清单，按 <b>Ctrl+F</b>，输入已知信息，即可快速找到。</p>
+                    <p class="fba-tip-text">如：点击“美国亚马逊FBA仓库地址清单”→ 按Ctrl+F → 在查找框输入“PHX3”，即可找到该地址。</p>
+                </div>
+                
+                <div class="fba-address-list">
+                    
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">1</span>
+                            <h3>美国亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th width="10%">FBA Code</th>
+                                        <th width="40%">地址 (Address)</th>
+                                        <th width="20%">City</th>
+                                        <th width="15%">State</th>
+                                        <th width="15%">Zip</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>PHX3</td><td>6835 West Buckeye Road</td><td>Phoenix</td><td>AZ</td><td>85043</td></tr>
+                                  <tr><td>PHX5</td><td>16920 W Commerce Drive</td><td>Goodyear</td><td>AZ</td><td>85338</td></tr>
+                                  <tr><td>PHX6</td><td>4750 West Mohave St</td><td>Phoenix</td><td>AZ</td><td>85043</td></tr>
+                                  <tr><td>PHX7</td><td>800 N 75th Ave</td><td>Phoenix</td><td>AZ</td><td>85043</td></tr>
+                                  <tr><td>ONT2</td><td>1910 E Central Ave</td><td>San Bernardino</td><td>CA</td><td>92408</td></tr>
+                                  <tr><td>ONT6</td><td>24208 San Michele Rd</td><td>Moreno Valley</td><td>CA</td><td>92551</td></tr>
+                                  <tr><td>ONT8</td><td>24300 Nandina Ave</td><td>Moreno Valley</td><td>CA</td><td>92551</td></tr>
+                                  <tr><td>OAK4</td><td>1555 N. Chrisman Rd</td><td>Tracy</td><td>CA</td><td>95376</td></tr>
+                                  <tr><td>OAK3</td><td>255 Park Center Drive</td><td>Patterson</td><td>CA</td><td>95363</td></tr>
+                                  <tr><td>ONT9</td><td>2125 W. San Bernandino Ave</td><td>Redlands</td><td>CA</td><td>92374</td></tr>
+                                  <tr><td>XUSD</td><td>1909 Zephyr St</td><td>Stockton</td><td>CA</td><td>95206</td></tr>
+                                  <tr><td>SNA4</td><td>2496 W Walnut Ave</td><td>Rialto</td><td>CA</td><td>92376-3009</td></tr>
+                                  <tr><td>SJC7</td><td>188 Mountain House Parkway</td><td>Tracy</td><td>CA</td><td>95391</td></tr>
+                                  <tr><td>SLC1</td><td>777 N 5600 W</td><td>Salt Lake City</td><td>UT</td><td>84116</td></tr>
+                                  <tr><td>SLC3</td><td>355 N JOHN GLENN RD</td><td>Salt Lake City</td><td>UT</td><td>84116-4413</td></tr>
+                                  <tr><td>LGB8</td><td>1568 N Linden Ave</td><td>Rialto</td><td>CA</td><td>92376</td></tr>
+                                  <tr><td>LGB6</td><td>20901 Krameria Ave</td><td>Riverside</td><td>CA</td><td>92518-1513</td></tr>
+                                  <tr><td>LGB4</td><td>27517 Pioneer Avenue</td><td>Redlands</td><td>CA</td><td>92374</td></tr>
+                                  <tr><td>LGB3</td><td>4950 Goodman Way</td><td>Eastvale</td><td>CA</td><td>91752</td></tr>
+                                  <tr><td>LGB7</td><td>1660 N. Linden Avenue</td><td>Rialto</td><td>CA</td><td>92376-2427</td></tr>
+                                  <tr><td>SMF1</td><td>4900 W Elkhorn Blvd</td><td>Sacramento</td><td>CA</td><td>95837</td></tr>
+                                  <tr><td>BDL1</td><td>801 Day Hill Rd.</td><td>Windsor</td><td>CT</td><td>6095</td></tr>
+                                  <tr><td>PHL1</td><td>1 Centerpoint Blvd.</td><td>New Castle</td><td>DE</td><td>19720</td></tr>
+                                  <tr><td>PHL3</td><td>1600 Johnson Way</td><td>New Castle</td><td>DE</td><td>19720</td></tr>
+                                  <tr><td>PHL7</td><td>560 Merrimac Ave</td><td>Middletown</td><td>DE</td><td>19709</td></tr>
+                                  <tr><td>PHL8</td><td>727 N Broad St</td><td>Middletown</td><td>DE</td><td>19709</td></tr>
+                                  <tr><td>TPA1</td><td>3350 Laurel Ridge Ave.</td><td>Ruskin</td><td>FL</td><td>33570</td></tr>
+                                  <tr><td>TPA2</td><td>1760 County Line Rd</td><td>Lakeland</td><td>FL</td><td>33811</td></tr>
+                                  <tr><td>MIA1</td><td>1900 NW 132nd Place Doral</td><td>Miami</td><td>FL</td><td>33182</td></tr>
+                                  <tr><td>MIA1-33054</td><td>14000 NW 37th Avenue</td><td>Opa-Locka</td><td>FL</td><td>33054</td></tr>
+                                  <tr><td>JAX3</td><td>13333 103rd Street</td><td>Jacksonville</td><td>FL</td><td>32210-8686</td></tr>
+                                  <tr><td>XUSE</td><td>5100 S Indianapolis Rd</td><td>Whitestown</td><td>IN</td><td>46075</td></tr>
+                                  <tr><td>IND1</td><td>4255 Anson Blvd</td><td>Whitestown</td><td>IN</td><td>46075</td></tr>
+                                  <tr><td>IND2</td><td>715 Airtech Pkwy</td><td>Plainfield</td><td>IN</td><td>46168</td></tr>
+                                  <tr><td>IND3</td><td>715 Airtech Pkwy Suite 195</td><td>Plainfield</td><td>IN</td><td>46168</td></tr>
+                                  <tr><td>IND4</td><td>710 S. Girls School Rd</td><td>Indianapolis</td><td>IN</td><td>46231</td></tr>
+                                  <tr><td>IND5</td><td>800 Perry Road</td><td>Plainfield</td><td>IN</td><td>46168</td></tr>
+                                  <tr><td>IND6</td><td>1453 E 10th St</td><td>Jeffersonville</td><td>IN</td><td>47130</td></tr>
+                                  <tr><td>IND9</td><td>1151 S GRAHAM RD</td><td>Greenwood</td><td>IN</td><td>46143-7830</td></tr>
+                                  <tr><td>SDF8</td><td>900 Patrol Rd</td><td>Jeffersonville</td><td>IN</td><td>47130</td></tr>
+                                  <tr><td>TUL1</td><td>2654 North Highway 169</td><td>Coffeyville</td><td>KS</td><td>67337</td></tr>
+                                  <tr><td>MCI1</td><td>113th St & Renner Blvd.</td><td>Lenexa</td><td>KS</td><td>66219</td></tr>
+                                  <tr><td>MKC4</td><td>19645 Waverly Rd</td><td>Edgerton</td><td>KS</td><td>66021-9588</td></tr>
+                                  <tr><td>MKC6</td><td>6925 Riverview Avenue</td><td>Kansas City</td><td>KS</td><td>66102</td></tr>
+                                  <tr><td>LEX1</td><td>1850 Mercer RD</td><td>Lexington</td><td>KY</td><td>40511</td></tr>
+                                  <tr><td>LEX2</td><td>172 Trade St.</td><td>Lexington</td><td>KY</td><td>40511</td></tr>
+                                  <tr><td>SDF1</td><td>1050 South Columbia</td><td>Campbellsville</td><td>KY</td><td>42718</td></tr>
+                                  <tr><td>SDF2</td><td>4360 Robards Ln</td><td>Louisville</td><td>KY</td><td>40218</td></tr>
+                                  <tr><td>SDF4</td><td>376 Zappos.com Blvd</td><td>Shepherdsville</td><td>KY</td><td>40165</td></tr>
+                                  <tr><td>SDF6</td><td>271 Omega Pkwy</td><td>Shepherdsville</td><td>KY</td><td>40165</td></tr>
+                                  <tr><td>CVG1</td><td>1155 Worldwide Blvd</td><td>Hebron</td><td>KY</td><td>41048</td></tr>
+                                  <tr><td>CVG2</td><td>1600 Worldwide Blvd</td><td>Hebron</td><td>KY</td><td>41048</td></tr>
+                                  <tr><td>CVG3</td><td>3680 Langley Dr.</td><td>Hebron</td><td>KY</td><td>41048</td></tr>
+                                  <tr><td>CVG5</td><td>2285 Litton Lane</td><td>Hebron</td><td>KY</td><td>41048</td></tr>
+                                  <tr><td>SDF7</td><td>300 Omicron Court</td><td>Shepherdsville</td><td>KY</td><td>40165</td></tr>
+                                  <tr><td>SDF9</td><td>100 W. Thomas P. Echols Lane</td><td>Shepherdsville</td><td>KY</td><td>40165</td></tr>
+                                  <tr><td>EWR4</td><td>50 New Canton Way</td><td>Robbinsville</td><td>NJ</td><td>8691</td></tr>
+                                  <tr><td>EWR5</td><td>301 Blair Rd.</td><td>Avenel</td><td>NJ</td><td>7001</td></tr>
+                                  <tr><td>EWR7</td><td>301 Blair Rd.</td><td>Avenel</td><td>NJ</td><td>7001</td></tr>
+                                  <tr><td>EWR9</td><td>8003 Industrial Parkway</td><td>Carteret</td><td>NJ</td><td>7008</td></tr>
+                                  <tr><td>ABE8-401</td><td>401 Independence Road</td><td>Florence</td><td>NJ</td><td>8518</td></tr>
+                                  <tr><td>ABE8-309</td><td>309 Cedar Lane</td><td>Florence</td><td>NJ</td><td>08518-2802</td></tr>
+                                  <tr><td>TEB3</td><td>2651 Oldmans Creek Rd</td><td>Logan Township</td><td>NJ</td><td>8085</td></tr>
+                                  <tr><td>TEB6</td><td>22 Hightstown Cranbury State Road</td><td>Cranbury</td><td>NJ</td><td>8512</td></tr>
+                                  <tr><td>RNO1</td><td>1600 East Newlands RD</td><td>Fernley</td><td>NV</td><td>89408</td></tr>
+                                  <tr><td>LAS1</td><td>4550 Nexus Way</td><td>Las Vegas</td><td>NV</td><td>89115</td></tr>
+                                  <tr><td>LAS2</td><td>3837 Bay Lake Trail, Suite 111 North</td><td>Las Vegas</td><td>NV</td><td>89030</td></tr>
+                                  <tr><td>RNO2</td><td>8000 North Virginia Street</td><td>Reno</td><td>NV</td><td>89506</td></tr>
+                                  <tr><td>RNO4</td><td>Amazon.com.NVDC Inc. 8000 North Virginia Street</td><td>Reno</td><td>NV</td><td>89506</td></tr>
+                                  <tr><td>BOS1</td><td>10 State St.</td><td>Nashua</td><td>NH</td><td>3063</td></tr>
+                                  <tr><td>BWI1</td><td>2010 Broening Highway</td><td>Baltimore</td><td>MD</td><td>21224</td></tr>
+                                  <tr><td>BWI2</td><td>5001 Holbird Ave.</td><td>Baltimore</td><td>MD</td><td>21224</td></tr>
+                                  <tr><td>CMH2</td><td>6050 Gateway Court</td><td>Groveport</td><td>OH</td><td>43125-9016</td></tr>
+                                  <tr><td>CMH1</td><td>11903 National Road SW</td><td>Etna</td><td>OH</td><td>43062-7793</td></tr>
+                                  <tr><td>MDT1</td><td>2 Ames Drive</td><td>Carlisle</td><td>PA</td><td>17015</td></tr>
+                                  <tr><td>ABE2</td><td>705 Boulder Drive</td><td>Breinigsville</td><td>PA</td><td>18031</td></tr>
+                                  <tr><td>ABE3</td><td>650 Boulder Drive</td><td>Breinigsville</td><td>PA</td><td>18031</td></tr>
+                                  <tr><td>PHL4</td><td>21 Roadway Dr</td><td>Carlisle</td><td>PA</td><td>17015</td></tr>
+                                  <tr><td>PHL5</td><td>500 McCarthy Dr</td><td>Lewisberry</td><td>PA</td><td>17339</td></tr>
+                                  <tr><td>PHL6</td><td>675 Allen Rd.</td><td>Carlisle</td><td>PA</td><td>17015</td></tr>
+                                  <tr><td>AVP1</td><td>550 Oak Ridge Road</td><td>Hazle Township</td><td>PA</td><td>18202-9361</td></tr>
+                                  <tr><td>AVP3</td><td>298 1ST AVE</td><td>Gouldsboro</td><td>PA</td><td>18424-9492</td></tr>
+                                  <tr><td>ABE5</td><td>6455 Allentown Boulevard</td><td>Harrisburg</td><td>PA</td><td>17112</td></tr>
+                                  <tr><td>PIT1</td><td>2250 Roswell Drive</td><td>Pittsburgh</td><td>PA</td><td>15205</td></tr>
+                                  <tr><td>VUBA</td><td>1000 Keystone Industrial Park</td><td>Scranton</td><td>PA</td><td>18512</td></tr>
+                                  <tr><td>VUGA</td><td>508 Delaware Avenue West</td><td>Pittston</td><td>PA</td><td>18643</td></tr>
+                                  <tr><td>XUSC</td><td>40 Logistics Drive</td><td>Carlisle</td><td>PA</td><td>17013</td></tr>
+                                  <tr><td>CAE1</td><td>4400 12 Street Extension</td><td>West Columbia</td><td>SC</td><td>29172</td></tr>
+                                  <tr><td>GSP1</td><td>402 John Dodd Rd</td><td>Spartanburg</td><td>SC</td><td>29303</td></tr>
+                                  <tr><td>CHA1</td><td>7200 Discovery Drive</td><td>Chattanooga</td><td>TN</td><td>37416</td></tr>
+                                  <tr><td>CHA2</td><td>225 Infinity Dr NW</td><td>Charleston</td><td>TN</td><td>37310</td></tr>
+                                  <tr><td>BNA1</td><td>14840 Central Pike Suite 190</td><td>Lebanon</td><td>TN</td><td>37090</td></tr>
+                                  <tr><td>BNA2</td><td>500 Duke DR</td><td>Franklin</td><td>TN</td><td>37067</td></tr>
+                                  <tr><td>BNA3</td><td>Joe B Jackson Pkwy</td><td>Murfreesboro</td><td>TN</td><td>37127</td></tr>
+                                  <tr><td>BNA4</td><td>50 airways Blvd</td><td>Nashville</td><td>TN</td><td>37217</td></tr>
+                                  <tr><td>DFW6</td><td>940 W Bethel Road</td><td>Coppell</td><td>TX</td><td>75019</td></tr>
+                                  <tr><td>SAT1</td><td>6000 Enterprise Avenue</td><td>Schertz</td><td>TX</td><td>78154-1461</td></tr>
+                                  <tr><td>DFW7</td><td>700 Westport Parkway</td><td>Haslet</td><td>TX</td><td>76177</td></tr>
+                                  <tr><td>DFW8</td><td>2700 Regent Blvd</td><td>DFW Airport</td><td>TX</td><td>75261</td></tr>
+                                  <tr><td>HOU1</td><td>8120 Humble Westfield Rd</td><td>Humble</td><td>TX</td><td>77338</td></tr>
+                                  <tr><td>HOU2</td><td>10550 Ella Blvd.</td><td>Houston</td><td>TX</td><td>77038-2324</td></tr>
+                                  <tr><td>HOU3</td><td>31555 Highway 90 E</td><td>Brookshire</td><td>TX</td><td>77423</td></tr>
+                                  <tr><td>XUSB</td><td>14900 Frye Rd.</td><td>Fort Worth</td><td>TX</td><td>76155</td></tr>
+                                  <tr><td>FTW1</td><td>33333 LBJ FWY</td><td>Dallas</td><td>TX</td><td>75241</td></tr>
+                                  <tr><td>FTW2</td><td>2701 West Bethel Road</td><td>Coppell</td><td>TX</td><td>75019</td></tr>
+                                  <tr><td>RIC1</td><td>5000 Commerce Way</td><td>Petersburg</td><td>VA</td><td>23803</td></tr>
+                                  <tr><td>RIC2</td><td>1901 Meadowville Technology Pkwy</td><td>Chester</td><td>VA</td><td>23836</td></tr>
+                                  <tr><td>RIC3</td><td>across the street fm 1901 Meadowville Technology Parkway</td><td>Chester</td><td>VA</td><td>23836</td></tr>
+                                  <tr><td>BFI1</td><td>1800 140th Avenue E.</td><td>Sumner</td><td>WA</td><td>98390</td></tr>
+                                  <tr><td>BFI3</td><td>2700 Center Drive</td><td>Dupont</td><td>WA</td><td>98327-9607</td></tr>
+                                  <tr><td>BFI4</td><td>20529 59th Place South</td><td>Kent</td><td>WA</td><td>98032</td></tr>
+                                  <tr><td>BFI5</td><td>20526 59th Place South</td><td>Kent</td><td>WA</td><td>98032</td></tr>
+                                  <tr><td>BFI7</td><td>1901 140th Ave E</td><td>Sumner</td><td>WA</td><td>98390</td></tr>
+                                  <tr><td>SEA6</td><td>2646 Rainier Ave.</td><td>South Seattle</td><td>WA</td><td>98144</td></tr>
+                                  <tr><td>SEA8</td><td>1475 124th Avenue</td><td>Northeast Bellevue</td><td>WA</td><td>98005</td></tr>
+                                  <tr><td>MKE1</td><td>3501 120th Ave</td><td>Kenosha</td><td>WI</td><td>53144</td></tr>
+                                  <tr><td>ATL6</td><td>4200 North Commerce</td><td>East Point</td><td>GA</td><td>30344</td></tr>
+                                  <tr><td>MGE3</td><td>808 Hog Mountain Road</td><td>Jefferson</td><td>GA</td><td>30549</td></tr>
+                                  <tr><td>MDW2</td><td>250 Emerald</td><td>Joliet</td><td>IL</td><td>60433-3280</td></tr>
+                                  <tr><td>MDW6</td><td>1125 W REMINGTON BLVD ROMEOVILLE</td><td>Romeoville</td><td>IL</td><td>60446-6529</td></tr>
+                                  <tr><td>MDW7</td><td>6605 Monee Manhattan Road</td><td>Monee</td><td>IL</td><td>60449</td></tr>
+                                  <tr><td>MDW8</td><td>1750 Bridge Drive</td><td>Waukegan</td><td>IL</td><td>60085</td></tr>
+                                  <tr><td>MDW9</td><td>2865 Duke Parkway</td><td>Aurora</td><td>IL</td><td>60502</td></tr>
+                                  <tr><td>ORD6</td><td>1250 N Mittel Blvd</td><td>Wood Dale</td><td>IL</td><td>60191</td></tr>
+                                  <tr><td>STL4</td><td>3050 GATEWAY COMMERCE CENTER DR S</td><td>Edwardsville</td><td>IL</td><td>62025-2815</td></tr>
+                                  <tr><td>BOS2</td><td>1000 Tech Centre Drive</td><td>Stoughton</td><td>MA</td><td>2072</td></tr>
+                                  <tr><td>BOS7</td><td>1180 Innovation Way</td><td>Fall River</td><td>MA</td><td>2720</td></tr>
+                                  <tr><td>CLT2</td><td>10240 Old Dowd Rd</td><td>Charlotte</td><td>NC</td><td>28214-8082</td></tr>
+                                  <tr><td>MSP1</td><td>2601 4th Avenue East</td><td>Shakopee</td><td>MN</td><td>55379</td></tr>
+                                  <tr><td>IVSA</td><td>4620 Olympic Blvd</td><td>Erlanger</td><td>KY</td><td>41018</td></tr>
+                                  <tr><td>IVSB</td><td>3521 POINT PLEASANT RD</td><td>Hebron</td><td>KY</td><td>41048</td></tr>
+                                  <tr><td>BDL2</td><td>200 Old Iron Ore Rd</td><td>Windsor</td><td>CT</td><td>06095-2144</td></tr>
+                                  <tr><td>DET1</td><td>39000 Amrhein Road</td><td>Livonia</td><td>MI</td><td>48150</td></tr>
+                                  <tr><td>ONT7</td><td>2125 W. San Bernandino Ave</td><td>Redlands</td><td>CA</td><td>92374</td></tr>
+                                  <tr><td>LAL1</td><td>1760 County Line Rd</td><td>Lakeland</td><td>FL</td><td>33811</td></tr>
+                                  <tr><td>MDW2-250</td><td>250 Emerald Drive</td><td>Joliet</td><td>IL</td><td>60433</td></tr>
+                                  <tr><td>ABE4</td><td>1610 Van Buren Road</td><td>Easton</td><td>PA</td><td>18045</td></tr>
+                                  <tr><td>SAT2</td><td>1401 E McCarty Lane</td><td>San Marcos</td><td>TX</td><td>78666</td></tr>
+                                  <tr><td>LAS6</td><td>4550 Nexus Way</td><td>Las Vegas</td><td>NV</td><td>89115</td></tr>
+                                  <tr><td>LAS7</td><td>6001 East Tropical Parkway</td><td>Las Vegas</td><td>NV</td><td>89115-1935</td></tr>
+                                  <tr><td>LAX9</td><td>11263 Oleander Ave</td><td>Fontana</td><td>CA</td><td>92337</td></tr>
+                                  <tr><td>MDT2</td><td>600 Principio Parkway</td><td>West North East</td><td>MD</td><td>21901</td></tr>
+                                  <tr><td>MDW4</td><td>250 Emetald Drive</td><td>Joliet</td><td>IL</td><td>60433</td></tr>
+                                  <tr><td>DEN2</td><td>22205 East 19th Ave</td><td>Aurora</td><td>CO</td><td>80019</td></tr>
+                                  <tr><td>DEN3</td><td>14601 Grant Street</td><td>Thornton</td><td>CO</td><td>80023</td></tr>
+                                  <tr><td>ATL8</td><td>2201 Thornton Road</td><td>Lithia Springs</td><td>GA</td><td>30122</td></tr>
+                                  <tr><td>MDW2-402</td><td>402 Emerald Drive</td><td>Joliet</td><td>IL</td><td>60433</td></tr>
+                                  <tr><td>FTW6</td><td>2601 W Bethel Road</td><td>Dallas</td><td>TX</td><td>75261</td></tr>
+                                  <tr><td>FTW9</td><td>944 West Sandy Lake Road</td><td>Coppell</td><td>TX</td><td>75019-3989</td></tr>
+                                  <tr><td>JAX2</td><td>12900 Pecan Park Road</td><td>Jacksonville</td><td>FL</td><td>32218</td></tr>
+                                  <tr><td>BWI4</td><td>165 Business Blvd</td><td>Clear Brook</td><td>VA</td><td>22624</td></tr>
+                                  <tr><td>IVSC</td><td>Uno - West Deptford 1225 Forest Parkway</td><td>West Deptford</td><td>NJ</td><td>8066</td></tr>
+                                  <tr><td>IVSD</td><td>UNO - Swedesboro NJ 800 Arlington Blvd</td><td>Swedesboro</td><td>NJ</td><td>8085</td></tr>
+                                  <tr><td>IVSE</td><td>2951 MARION DR UNIT 101</td><td>Las Vegas</td><td>NV</td><td>89115</td></tr>
+                                  <tr><td>IVSF</td><td>2821 MARION DR STE 109</td><td>Las Vegas</td><td>NV</td><td>89115</td></tr>
+                                  <tr><td>SMF3</td><td>3923 S B ST</td><td>Stockton</td><td>CA</td><td>95206-8202</td></tr>
+                                  <tr><td>ITX1</td><td>9851 Fallbrook Pines Drive Suite 100</td><td>Houston</td><td>TX</td><td>77064</td></tr>
+                                  <tr><td>ITX2</td><td>6911 FAIRBANKS N HOUSTON RD SUITE 160</td><td>Houston</td><td>TX</td><td>77040</td></tr>
+                                  <tr><td>DTW1</td><td>32801 Ecorse Road</td><td>Romulus</td><td>MI</td><td>48174</td></tr>
+                                  <tr><td>CMH1-11999</td><td>11999 National Road SW</td><td>Etna</td><td>OH</td><td>43062</td></tr>
+                                  <tr><td>CMH2</td><td>6050 Gateway Court</td><td>Groveport</td><td>OH</td><td>43125</td></tr>
+                                  <tr><td>CMH3</td><td>700 GATEWAY BLVD</td><td>Monroe</td><td>OH</td><td>45050-1848</td></tr>
+                                  <tr><td>CMH6</td><td>3538 TRADEPORT CT</td><td>Lockbourne</td><td>OH</td><td>43137-9670</td></tr>
+                                  <tr><td>FAT1</td><td>3575 S. Orange Ave</td><td>Fresno</td><td>CA</td><td>93725</td></tr>
+                                  <tr><td>PDX9</td><td>1250 NW Swigert Way</td><td>Troutdale</td><td>OR</td><td>97060</td></tr>
+                                  <tr><td>PDX6</td><td>15000 N. Lombard St</td><td>Portland</td><td>OR</td><td>97203-6814</td></tr>
+                                  <tr><td>PDX7</td><td>4775 Depot Ct SE</td><td>Salem</td><td>OR</td><td>97317-8983</td></tr>
+                                  <tr><td>CLT3</td><td>6500 Davidson Hwy</td><td>Concord</td><td>NC</td><td>28027</td></tr>
+                                  <tr><td>ACY1</td><td>240 Mantua Grove Road</td><td>West Deptford</td><td>NJ</td><td>8066</td></tr>
+                                  <tr><td>ACY2</td><td>1101 E PEARL ST</td><td>Burlington</td><td>NJ</td><td>08016-1934</td></tr>
+                                  <tr><td>JFK8</td><td>546 Gulf Avenue</td><td>Staten Island</td><td>NY</td><td>10314</td></tr>
+                                  <tr><td>LGA9</td><td>2170 Route 27</td><td>Edison</td><td>NJ</td><td>8817</td></tr>
+                                  <tr><td>MCO1</td><td>12340 Boggy Creek Rd</td><td>Orlando</td><td>FL</td><td>32824</td></tr>
+                                  <tr><td>MEM1</td><td>3292 E Holmes Rd</td><td>Memphis</td><td>TN</td><td>38118</td></tr>
+                                  <tr><td>DCA1</td><td>1700 Sparrows Point Boulevard</td><td>Sparrows Point</td><td>MD</td><td>21219</td></tr>
+                                  <tr><td>SJC8</td><td>46724 Lakeview Blvd</td><td>Fremont</td><td>CA</td><td>94538</td></tr>
+                                  <tr><td>DET2</td><td>50500 Mound Rd</td><td>Shelby Township</td><td>MI</td><td>48317-1318</td></tr>
+                                  <tr><td>OKC1</td><td>9201 S Portland Avenue</td><td>Oklahoma City</td><td>OK</td><td>73159-0003</td></tr>
+                                  <tr><td>SAV3</td><td>7001 Skipper Rd</td><td>Macon</td><td>GA</td><td>31216-6427</td></tr>
+                                  <tr><td>CLT4</td><td>8000 TUCKASEEGEE RD</td><td>Charlotte</td><td>NC</td><td>28214-2633</td></tr>
+                                  <tr><td>STL6</td><td>3931 Lakeview Corporate Drive</td><td>Edwardsville</td><td>IL</td><td>62025-2801</td></tr>
+                                  <tr><td>TUS2</td><td>6701 S KOLB RD</td><td>Tucson</td><td>AZ</td><td>85756-9271</td></tr>
+                                  <tr><td>FTW3</td><td>15201 Heritage Pkwy</td><td>Fort Worth</td><td>TX</td><td>76177-2517</td></tr>
+                                  <tr><td>XIX6</td><td>10681 Production Ave</td><td>Fontana</td><td>CA</td><td>92337-8006</td></tr>
+                                  <tr><td>BDL3</td><td>409 Washington Avenue</td><td>North Haven</td><td>CT</td><td>06473-1307</td></tr>
+                                  <tr><td>CMH4</td><td>1550 W. Main Street</td><td>West Jefferson</td><td>OH</td><td>43162-9747</td></tr>
+                                  <tr><td>CLE2</td><td>21500 Emery Rd</td><td>North Randall</td><td>OH</td><td>44128</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">2</span>
+                            <h3>加拿大亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>Province</th>
+                                        <th>Postal Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>YVR1</td><td>450 Derwent PL Delta, British Columbia</td><td>Vancouver</td><td>BC</td><td>V3M 5Y9</td></tr>
+                                  <tr><td>YVR2</td><td>450 Derwent Place</td><td>Delta</td><td>BC</td><td>V3M 5Y9</td></tr>
+                                  <tr><td>YVR3</td><td>109 Braid St</td><td>New Westminster</td><td>BC</td><td>V3L 5H4</td></tr>
+                                  <tr><td>YVR4</td><td>4189 Salish Sea Way</td><td>Tsawwassen</td><td>BC</td><td>V4M 0B9</td></tr>
+                                  <tr><td>YXX2</td><td>16131 Blundell RD</td><td>Richmond</td><td>BC</td><td>V6W 0A3</td></tr>
+                                  <tr><td>YYZ1</td><td>6363 Millcreek Drive</td><td>Mississauga</td><td>ON</td><td>L5N 1L8</td></tr>
+                                  <tr><td>YYZ2</td><td>2750 Peddie Rd.</td><td>Milton</td><td>ON</td><td>L9T 6Y9</td></tr>
+                                  <tr><td>YYZ3</td><td>7995 Winston Churchill Blvd.</td><td>Brampton</td><td>ON</td><td>L6Y 5Z4</td></tr>
+                                  <tr><td>YYZ4</td><td>8050 Heritage Road</td><td>Brampton</td><td>ON</td><td>L6Y 0C9</td></tr>
+                                  <tr><td>YHM1</td><td>110 Aeropark Blvd</td><td>Mount Hope</td><td>ON</td><td>L0R 1W1</td></tr>
+                                  <tr><td>YYZ7</td><td>12724 Coleraine Drive</td><td>Bolton</td><td>ON</td><td>L7E 4L8</td></tr>
+                                  <tr><td>YOO1</td><td>789 SALEM RD N</td><td>Ajax</td><td>ON</td><td>L1Z 0J2</td></tr>
+                                  <tr><td>YYZ9</td><td>6351 Steeles Ave E</td><td>Scarborough</td><td>ON</td><td>M1X 1N5</td></tr>
+                                  <tr><td>YXU1</td><td>11884 Sunset Rd</td><td>St Thomas</td><td>ON</td><td>N5P 0G9</td></tr>
+                                  <tr><td>YDC5</td><td>6351 Steeles Ave E</td><td>Scarborough</td><td>ON</td><td>M1X 1N5</td></tr>
+                                  <tr><td>YOW1</td><td>5225 Boundary Road</td><td>Navan</td><td>ON</td><td>K4B 0L3</td></tr>
+                                  <tr><td>YOW3</td><td>222 Citigate Drive</td><td>Nepean</td><td>ON</td><td>K2J 7C7</td></tr>
+                                  <tr><td>YYC1</td><td>293069 Colonel Robertson Way and Crossiron Blvd</td><td>Calgary</td><td>AB</td><td>T4A 1C6</td></tr>
+                                  <tr><td>YYC6</td><td>9705 68th Street SE</td><td>Calgary</td><td>AB</td><td>T2C 4Z8</td></tr>
+                                  <tr><td>YEG1</td><td>1440 39 AVE NISKU</td><td>Edmonton</td><td>AB</td><td>T9E 0B4</td></tr>
+                                  <tr><td>YEG2</td><td>27383 92 Ave</td><td>Acheson</td><td>AB</td><td>T7X 2X2</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- 美国FBA仓库 -->
-            <h3 style="font-size: 24px; color: var(--color-primary); margin: 40px 0 20px 0; font-weight: 600; border-left: 4px solid var(--color-primary); padding-left: 16px;">美国FBA仓库地址</h3>
-            <div class="fba-table-wrapper">
-              <table class="fba-table">
-                <thead>
-                  <tr>
-                    <th>仓库代码</th>
-                    <th>仓库名称</th>
-                    <th>详细地址</th>
-                    <th>城市/州</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>ONT8</td>
-                    <td>Ontario</td>
-                    <td>1910 E Central Ave</td>
-                    <td>Ontario, CA 91761</td>
-                  </tr>
-                  <tr>
-                    <td>LAX9</td>
-                    <td>Los Angeles</td>
-                    <td>1915 E Central Ave</td>
-                    <td>Los Angeles, CA 91761</td>
-                  </tr>
-                  <tr>
-                    <td>LGB8</td>
-                    <td>Long Beach</td>
-                    <td>2695 E 20th St</td>
-                    <td>Long Beach, CA 90810</td>
-                  </tr>
-                  <tr>
-                    <td>SMF3</td>
-                    <td>Sacramento</td>
-                    <td>16900 N Lathrop Rd</td>
-                    <td>Tracy, CA 95304</td>
-                  </tr>
-                  <tr>
-                    <td>SCK1</td>
-                    <td>Stockton</td>
-                    <td>16920 N Lathrop Rd</td>
-                    <td>Stockton, CA 95215</td>
-                  </tr>
-                  <tr>
-                    <td>OAK3</td>
-                    <td>Oakland</td>
-                    <td>25500 Clawiter Rd</td>
-                    <td>Hayward, CA 94545</td>
-                  </tr>
-                  <tr>
-                    <td>CLT2</td>
-                    <td>Charlotte</td>
-                    <td>15234 Carowinds Blvd</td>
-                    <td>Charlotte, NC 28273</td>
-                  </tr>
-                  <tr>
-                    <td>FTW1</td>
-                    <td>Fort Worth</td>
-                    <td>1600 N Great Southwest Pkwy</td>
-                    <td>Grand Prairie, TX 75050</td>
-                  </tr>
-                  <tr>
-                    <td>DFW6</td>
-                    <td>Dallas</td>
-                    <td>700 W Bethel Rd</td>
-                    <td>Coppell, TX 75019</td>
-                  </tr>
-                  <tr>
-                    <td>MDW2</td>
-                    <td>Chicago</td>
-                    <td>2500 Sequoia Dr</td>
-                    <td>Aurora, IL 60506</td>
-                  </tr>
-                  <tr>
-                    <td>IND9</td>
-                    <td>Indianapolis</td>
-                    <td>4255 Anson Blvd</td>
-                    <td>Whitestown, IN 46075</td>
-                  </tr>
-                  <tr>
-                    <td>AVP1</td>
-                    <td>Hazleton</td>
-                    <td>550 Oak Ridge Rd</td>
-                    <td>Hazleton, PA 18202</td>
-                  </tr>
-                  <tr>
-                    <td>PHL7</td>
-                    <td>Philadelphia</td>
-                    <td>1 New Enterprise Way</td>
-                    <td>Carlisle, PA 17015</td>
-                  </tr>
-                  <tr>
-                    <td>BWI2</td>
-                    <td>Baltimore</td>
-                    <td>2010 Broening Hwy</td>
-                    <td>Baltimore, MD 21224</td>
-                  </tr>
-                  <tr>
-                    <td>JAX2</td>
-                    <td>Jacksonville</td>
-                    <td>12900 Imeson Rd</td>
-                    <td>Jacksonville, FL 32226</td>
-                  </tr>
-                  <tr>
-                    <td>MIA1</td>
-                    <td>Miami</td>
-                    <td>18801 NW 2nd Ave</td>
-                    <td>Miami, FL 33169</td>
-                  </tr>
-                  <tr>
-                    <td>ATL2</td>
-                    <td>Atlanta</td>
-                    <td>1100 Lower Fayetteville Rd</td>
-                    <td>Newnan, GA 30265</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">3</span>
+                            <h3>日本亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>Prefecture</th>
+                                        <th>Postal Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>NRT5</td><td>1-10-15 Minamidai</td><td>Kawagoe</td><td>Saitama</td><td>350-1182</td></tr>
+                                  <tr><td>HND3</td><td>2-1-1 2F Kawajima</td><td>Kawajima</td><td>Saitama</td><td>350-0195</td></tr>
+                                  <tr><td>KIX1</td><td>138-7 Yawatacho,Chikko</td><td>Sakai</td><td>Osaka</td><td>590-8589</td></tr>
+                                  <tr><td>KIX2</td><td>2-1-1 Midorigaoka</td><td>Daito</td><td>Osaka</td><td>574-8531</td></tr>
+                                  <tr><td>HSG1</td><td>3-1-3 Yayoigaoka</td><td>Tosu</td><td>Saga</td><td>841-8505</td></tr>
+                                  <tr><td>FSZ1</td><td>4-5-1 Ogicho</td><td>Odawara</td><td>Kanagawa</td><td>250-8560</td></tr>
+                                  <tr><td>NRT1</td><td>2-13-1 Shiohama</td><td>Ichikawa</td><td>Chiba</td><td>272-0193</td></tr>
+                                  <tr><td>NRT2</td><td>2036 Kamitakano</td><td>Yachiyo</td><td>Chiba</td><td>276-8525</td></tr>
+                                  <tr><td>NRT2</td><td>10-6 Asahigaoka</td><td>Tajimi</td><td>Gifu</td><td>507-8585</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- 欧洲FBA仓库 -->
-            <h3 style="font-size: 24px; color: var(--color-primary); margin: 40px 0 20px 0; font-weight: 600; border-left: 4px solid var(--color-primary); padding-left: 16px;">欧洲FBA仓库地址</h3>
-            <div class="fba-table-wrapper">
-              <table class="fba-table">
-                <thead>
-                  <tr>
-                    <th>仓库代码</th>
-                    <th>仓库名称</th>
-                    <th>详细地址</th>
-                    <th>国家</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>XUKC</td>
-                    <td>Doncaster</td>
-                    <td>Amazon Way, Doncaster DN9 3EQ</td>
-                    <td>英国</td>
-                  </tr>
-                  <tr>
-                    <td>BHX4</td>
-                    <td>Birmingham</td>
-                    <td>Unit 1, Prologis Park, Coventry CV3 4PF</td>
-                    <td>英国</td>
-                  </tr>
-                  <tr>
-                    <td>LBA1</td>
-                    <td>Leeds</td>
-                    <td>Unit 1, Wakefield 41 Industrial Estate, Wakefield WF2 0XJ</td>
-                    <td>英国</td>
-                  </tr>
-                  <tr>
-                    <td>MXP5</td>
-                    <td>Milan</td>
-                    <td>Via Cristoforo Colombo, 1, 20090 Segrate MI</td>
-                    <td>意大利</td>
-                  </tr>
-                  <tr>
-                    <td>MXP8</td>
-                    <td>Milan</td>
-                    <td>Via dell'Industria, 1, 20090 Segrate MI</td>
-                    <td>意大利</td>
-                  </tr>
-                  <tr>
-                    <td>FRA1</td>
-                    <td>Frankfurt</td>
-                    <td>Amazon-Straße 1, 41569 Rommerskirchen</td>
-                    <td>德国</td>
-                  </tr>
-                  <tr>
-                    <td>FRA3</td>
-                    <td>Frankfurt</td>
-                    <td>Amazon-Straße 1, 41569 Rommerskirchen</td>
-                    <td>德国</td>
-                  </tr>
-                  <tr>
-                    <td>FRA4</td>
-                    <td>Frankfurt</td>
-                    <td>Amazon-Straße 1, 41569 Rommerskirchen</td>
-                    <td>德国</td>
-                  </tr>
-                  <tr>
-                    <td>FRA5</td>
-                    <td>Frankfurt</td>
-                    <td>Amazon-Straße 1, 41569 Rommerskirchen</td>
-                    <td>德国</td>
-                  </tr>
-                  <tr>
-                    <td>FRA8</td>
-                    <td>Frankfurt</td>
-                    <td>Amazon-Straße 1, 41569 Rommerskirchen</td>
-                    <td>德国</td>
-                  </tr>
-                  <tr>
-                    <td>MUC3</td>
-                    <td>Munich</td>
-                    <td>Amazon-Straße 1, 85386 Eching</td>
-                    <td>德国</td>
-                  </tr>
-                  <tr>
-                    <td>CDG1</td>
-                    <td>Paris</td>
-                    <td>1 Rue du Champ Rouge, 91590 La Ferté-Alais</td>
-                    <td>法国</td>
-                  </tr>
-                  <tr>
-                    <td>CDG3</td>
-                    <td>Paris</td>
-                    <td>Rue de la Croix Blanche, 91590 La Ferté-Alais</td>
-                    <td>法国</td>
-                  </tr>
-                  <tr>
-                    <td>MAD1</td>
-                    <td>Madrid</td>
-                    <td>Polígono Industrial, Calle de la Innovación, 1, 28850 Torrejón de Ardoz, Madrid</td>
-                    <td>西班牙</td>
-                  </tr>
-                  <tr>
-                    <td>MAD4</td>
-                    <td>Madrid</td>
-                    <td>Polígono Industrial, Calle de la Innovación, 1, 28850 Torrejón de Ardoz, Madrid</td>
-                    <td>西班牙</td>
-                  </tr>
-                  <tr>
-                    <td>AMS1</td>
-                    <td>Amsterdam</td>
-                    <td>Amazonstraat 1, 1412 XA Naarden</td>
-                    <td>荷兰</td>
-                  </tr>
-                  <tr>
-                    <td>AMS2</td>
-                    <td>Amsterdam</td>
-                    <td>Amazonstraat 1, 1412 XA Naarden</td>
-                    <td>荷兰</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">4</span>
+                            <h3>英国亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>County</th>
+                                        <th>Postcode</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>EDI4</td><td>Amazon.co.uk Amazon Way</td><td>Dunfermline</td><td>Fife</td><td>KY11 8ST</td></tr>
+                                  <tr><td>LTN2</td><td>amazon.co.uk</td><td>Hemel Hempstead</td><td>Hertfordshire</td><td>HP 27LF</td></tr>
+                                  <tr><td>LTN1</td><td>amazon.co.uk</td><td>Ridgmont</td><td>Bedfordshire</td><td>MK43 0ZA</td></tr>
+                                  <tr><td>CWL1</td><td>Ffordd Amazon Crymlyn Burrows</td><td>Swansea</td><td>South Wales</td><td>SA1 8QX</td></tr>
+                                  <tr><td>GLA1</td><td>Amazon.co.uk 2 Cloch Road Faulds Park</td><td>Gourock</td><td>Inverclyde</td><td>PA19 1BQ</td></tr>
+                                  <tr><td>EUK5</td><td>Amazon.co.uk Phase Two, Kingston Park</td><td>Peterborough</td><td>Cambridgeshire</td><td>PE2 9EN</td></tr>
+                                  <tr><td>LBA1</td><td>Amazon.co.uk Firstpoint Business Park Balby Carr Bank</td><td>Doncaster</td><td>South Yorkshire</td><td>DN4 5JS</td></tr>
+                                  <tr><td>BHX1</td><td>Power Station Road</td><td>Rugeley</td><td>Staffordshire</td><td>WS15 1LX</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- 日本FBA仓库 -->
-            <h3 style="font-size: 24px; color: var(--color-primary); margin: 40px 0 20px 0; font-weight: 600; border-left: 4px solid var(--color-primary); padding-left: 16px;">日本FBA仓库地址</h3>
-            <div class="fba-table-wrapper">
-              <table class="fba-table">
-                <thead>
-                  <tr>
-                    <th>仓库代码</th>
-                    <th>仓库名称</th>
-                    <th>详细地址</th>
-                    <th>城市</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>NRT1</td>
-                    <td>成田</td>
-                    <td>千葉県印旛郡栄町安食台1-1-1</td>
-                    <td>千葉県</td>
-                  </tr>
-                  <tr>
-                    <td>NRT2</td>
-                    <td>成田</td>
-                    <td>千葉県印旛郡栄町安食台1-1-1</td>
-                    <td>千葉県</td>
-                  </tr>
-                  <tr>
-                    <td>NRT3</td>
-                    <td>成田</td>
-                    <td>千葉県印旛郡栄町安食台1-1-1</td>
-                    <td>千葉県</td>
-                  </tr>
-                  <tr>
-                    <td>TYO1</td>
-                    <td>東京</td>
-                    <td>千葉県印旛郡栄町安食台1-1-1</td>
-                    <td>千葉県</td>
-                  </tr>
-                  <tr>
-                    <td>TYO2</td>
-                    <td>東京</td>
-                    <td>千葉県印旛郡栄町安食台1-1-1</td>
-                    <td>千葉県</td>
-                  </tr>
-                  <tr>
-                    <td>KIX1</td>
-                    <td>大阪</td>
-                    <td>大阪府泉佐野市りんくう往来北1-271</td>
-                    <td>大阪府</td>
-                  </tr>
-                  <tr>
-                    <td>KIX2</td>
-                    <td>大阪</td>
-                    <td>大阪府泉佐野市りんくう往来北1-271</td>
-                    <td>大阪府</td>
-                  </tr>
-                  <tr>
-                    <td>KIX3</td>
-                    <td>大阪</td>
-                    <td>大阪府泉佐野市りんくう往来北1-271</td>
-                    <td>大阪府</td>
-                  </tr>
-                  <tr>
-                    <td>KIX4</td>
-                    <td>大阪</td>
-                    <td>大阪府泉佐野市りんくう往来北1-271</td>
-                    <td>大阪府</td>
-                  </tr>
-                  <tr>
-                    <td>KIX5</td>
-                    <td>大阪</td>
-                    <td>大阪府泉佐野市りんくう往来北1-271</td>
-                    <td>大阪府</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">5</span>
+                            <h3>德国亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Postal Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>LEJ1</td><td>Amazon Distribution GmbH, Amazonstrasse 1</td><td>Leipzig</td><td>Saxony</td><td>04347</td></tr>
+                                  <tr><td>FRA3</td><td>Amazon Distribution GmbH, Amazonstrasse 1</td><td>Bad Herfeld</td><td>Hesse</td><td>36251</td></tr>
+                                  <tr><td>EDE5</td><td>Amazon.de, Wahrbrink 25</td><td>Werne</td><td>North Rhine-Westphalia</td><td>59368</td></tr>
+                                  <tr><td>EDE4</td><td>Amazon.de, Wahrbrink 23</td><td>Werne</td><td>North Rhine-Westphalia</td><td>59368</td></tr>
+                                  <tr><td>MUC3</td><td>Amazon Distribution, Amazonstrasse 1</td><td>Graben</td><td>Bayern</td><td>86835</td></tr>
+                                  <tr><td>DUS2</td><td>Amazon Fulfillment Germany GmbH, Amazonstrasse 1</td><td>Rheinberg</td><td>Nordrhein-Westfalen</td><td>47495</td></tr>
+                                  <tr><td>FRA1</td><td>Amazon Distribution, Am Schloß Eichhof 1</td><td>Bad Herfeld</td><td>Hesse</td><td>36251</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- 温馨提示 -->
-            <div style="background: #f0f9ff; border-left: 4px solid var(--color-primary); padding: 20px; margin-top: 40px; border-radius: 8px;">
-              <p style="margin: 0; color: #333; line-height: 1.8; font-size: 15px;">
-                <strong style="color: var(--color-primary);">温馨提示：</strong>
-                以上仓库地址信息仅供参考，实际发货时请以亚马逊卖家后台创建发货计划时显示的仓库地址为准。仓库代码和地址可能会根据亚马逊的运营需要而调整，建议在发货前再次确认。
-              </p>
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">6</span>
+                            <h3>法国亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>Region</th>
+                                        <th>Postal Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>ORY1</td><td>Pole 45,1401 Rue Champ Rouge,45770,Saran,Loiret,France</td><td>Saran</td><td>Loiret</td><td>45770</td></tr>
+                                  <tr><td>MRS1</td><td>building 2,ZAC Les Portes de Provence,F-26200,Montelimar,France</td><td>Montelimar</td><td>Dr?me</td><td>26200</td></tr>
+                                  <tr><td>LYS1</td><td>1 rue Amazon,Sevrey,Saone-et-Loire,71100,Burgundy,France</td><td>Severy</td><td>Saone-et-Loire</td><td>71100</td></tr>
+                                  <tr><td>LIL1</td><td>Rue de la Plaine,59553,Lauwin-Planque,Nord-Pas-de-Calais,France</td><td>Lauwin-Planque</td><td>Nord</td><td>59553</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">7</span>
+                            <h3>意大利亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>Region</th>
+                                        <th>Postal Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>MXP5</td><td>Amazon Italia Logistica S.r.l, Strada Dogana Po, 2U</td><td>Castel San Giovanni</td><td>Province of Piacenza</td><td>29015</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">8</span>
+                            <h3>西班牙亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>Province</th>
+                                        <th>Postal Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>MAD4</td><td>Amazon.es Avenida de la Astronomia, 24</td><td>San Fernando de Henares</td><td>Madrid</td><td>28830</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">9</span>
+                            <h3>印度亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Pin Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>SVGA</td><td>C/o. Yusen Logistics Pvt. Ltd. Survey Number 36/6 & 36/4B, Done Atkuru Village, Nidamanuru, Vijayawada</td><td>Vijayawada</td><td>Andhra Pradesh</td><td>521104</td></tr>
+                                  <tr><td>SAMB</td><td>Crystal Indus Logistics Park, National Highway 8th, Bhayla village, Survey No-78/79, Bawla Taluka, District Ahmedabad</td><td>Ahmedabad</td><td>Gujarat</td><td>382220</td></tr>
+                                  <tr><td>SAMC</td><td>Plot No.22, Swastik Industrial Estate, Survey No.242, Village Sari, Taluka Sanand District, Ahmedabad</td><td>Ahmedabad</td><td>Gujarat</td><td>382220</td></tr>
+                                  <tr><td>AMD1</td><td>Crystal Indus Logistics Park, Unit No.10, National Highway 8th, Bhayla village, Block No.70P, Resurvey No-923, Bawla Taluka, District Ahmedabad</td><td>Ahmedabad</td><td>Gujarat</td><td>382220</td></tr>
+                                  <tr><td>DEL3</td><td>Agson Global Logistics Park, Village Kishora, Main G.T.Road, Sonipat</td><td>Sonipat</td><td>Haryana</td><td>131021</td></tr>
+                                  <tr><td>SDEC</td><td>Transport Corporation of India, Khasara No. 4/21 MIN, 22 MIN, 8/1,2,3, MIN, 4 MIN, 5, MIN, 8 MIN, 9/1 MIN, 10/1, 12/2, 13/1, 9/5, 6/1/1, Pataudi Road, Jhund Sarai, Farukhnagar, Gurgaon</td><td>Gurgaon</td><td>Haryana</td><td>122505</td></tr>
+                                  <tr><td>DEL4</td><td>KH No 18//21,19//25,34//5,6,7/1 min,14/2/2 min,15/1 min,27,35//1,7,8,9/1,9/2,10/1,10/2,11 min,12,13,14 of village Jamalpur, Dist Gurgaon</td><td>Gurgaon</td><td>Haryana</td><td>122503</td></tr>
+                                  <tr><td>DEL2</td><td>Unit No.1, Khewat/Khata No. 373/400, Mustatil No. 31, Kila No 14/2, Village Tauru, Mewat</td><td>Tauru</td><td>Haryana</td><td>122105</td></tr>
+                                  <tr><td>SDEG</td><td>Khasra No.58//12/2/2/2 min,19 min,20/2,21/1,21/2,21/3,57//23/2,24,25,63//3/1/1,4/1,5/1, Village Bilaspur, District Gurgaon</td><td>Gurgaon</td><td>Haryana</td><td>122413</td></tr>
+                                  <tr><td>SDEB</td><td>Kuehne Nagel Pvt. Ltd, Building No. 2B, M/s. Indospace FWS Industrial Parks Pvt. Ltd., Pataudi-Kulana Road, VPO Luhari, MDR-132, Tehsil Jhajjar, Jhajjar</td><td>Jhajjar</td><td>Haryana</td><td>124108</td></tr>
+                                  <tr><td>BLR5</td><td>38 & 39, Soukya Road, Kacherakanahalli, Hoskote Taluka, Bangalore Rural District</td><td>Bangalore</td><td>Karnataka</td><td>560067</td></tr>
+                                  <tr><td>SBLB</td><td>#200, CHICKHULLUR JANGAMAKOTE ROAD, DASARAHALLI POST, HOSKOTE TALUKA, BANGALORE RURAL DISTRICT</td><td>Bangalore</td><td>Karnataka</td><td>562114</td></tr>
+                                  <tr><td>SBLC</td><td>Sai Dhara Complex, Warehouse No I-1, Next to Shangrila Resort, TCI supply chain solution ltd, No.92 Anugondanagalli Village & Hobli Hoskote Taluk, Bangalore Rural</td><td>Bangalore</td><td>Karnataka</td><td>560067</td></tr>
+                                  <tr><td>SIDA</td><td>Yusen Logistics (India) Pvt at Survey Number 2/4/1, 2/2/2, 2/2/2, 2/1/2, 2/2/3, 2/3/2, Village Pipliya Kumhar, MR-11; Behind METRO Cash n Carry Store, Tehsil and District Indore</td><td>Indore</td><td>Madhya Pradesh</td><td>453771</td></tr>
+                                  <tr><td>SBOB</td><td>Shree Sai Dhara Complex, W/N. I-2, Opp RK petrol pump, Nr. Shagrila resorts, Mumbai Nasik highway, Kuksa (Borivali), Bhiwandi</td><td>Bhiwandi</td><td>Maharashtra</td><td>421302</td></tr>
+                                  <tr><td>SBOE</td><td>Sai Dhara Complex, Warehouse No I-1, Next to Shangrila Resort, Mumbai Nashik Highway, NH#3, Kukse-Borivalli Village, District Thane. Bhiwandi</td><td>Bhiwandi</td><td>Maharashtra</td><td>421302</td></tr>
+                                  <tr><td>BOM4</td><td>WB 10/11, Renaissance Industrial Park, Village Vashere, Post Amane, Taluka Bhiwandi, Dist. Thane</td><td>Bhiwandi</td><td>Maharashtra</td><td>421302</td></tr>
+                                  <tr><td>SPNA</td><td>IndoSpace AS Industrial Park Pvt Ltd, Gat 339, 341, Behind Hotel Marriott, Off MIDC Road, Village Mahalunge Ingle, Landmark - Near Harman Industries</td><td>Pune</td><td>Maharashtra</td><td>410501</td></tr>
+                                  <tr><td>NAG1</td><td>TCI Supply Chain Solutions, Plot no. 3, Khasra No. 104 (Part), 111 (Part), Hingna P.S., Khapri Post Office, Nagpur District</td><td>Nagpur</td><td>Maharashtra</td><td>441108</td></tr>
+                                  <tr><td>BOM1</td><td>Building A, F & H, Prathamesh Complex, Saravali Village, Opp. Hotel Vatika, Near Kalyan Bhiwandi Junction, Bhiwandi</td><td>Bhiwandi</td><td>Maharashtra</td><td>421302</td></tr>
+                                  <tr><td>SBOA</td><td>"K-Square" The Integrated Park, Village Kurund, National Highway- 3 (NH-3), Taluka Bhiwandi, Dist. Thane</td><td>Bhiwandi</td><td>Maharashtra</td><td>421308</td></tr>
+                                  <tr><td>BOM3</td><td>K-Square Industrial and Logistics Park, WH 5/2, Village Kurund, Taluka Bhiwandi, Thane</td><td>Bhiwandi</td><td>Maharashtra</td><td>421302</td></tr>
+                                  <tr><td>BOM6</td><td>Building 1, SR.NO. 4(PART), SR.NO.5 (PART), SR.NO.6 (PART), SR.NO.20A (PART) CTS No. 131, VILLAGE WADHWAN, KANDIVALI (EAST), TALUKA BORIVALI</td><td>Mumbai</td><td>Maharashtra</td><td>400101</td></tr>
+                                  <tr><td>SBOC</td><td>ADANI LOGISTICS LTD, Antariksh Logidrome, Warehouse A4, Village :Sape- Aamne,Padgha- Kalyan Road, Post- Padgha, Bhiwandi</td><td>Bhiwandi</td><td>Maharashtra</td><td>421101</td></tr>
+                                  <tr><td>BOM5</td><td>Renaissance industrial smart city, Kalyan Sape road Vashere village, Amane post,Thane</td><td>Thane</td><td>Maharashtra</td><td>421302</td></tr>
+                                  <tr><td>SDEA</td><td>A-43, Ground Floor, Mohan Cooperative Industrial Estate, Main Mathura Road, Badarpur, South Delhi, New Delhi</td><td>New Delhi</td><td>Delhi</td><td>110044</td></tr>
+                                  <tr><td>SDEF</td><td>No. A-33, Mohan Cooperative Industrial Estate, New Delhi</td><td>New Delhi</td><td>Delhi</td><td>110044</td></tr>
+                                  <tr><td>SDEE</td><td>Plot No. A-28(Lower Ground floor), Mohan Co-operative Industrial Estate, Mathura Road, New Delhi</td><td>New Delhi</td><td>Delhi</td><td>110044</td></tr>
+                                  <tr><td>SDED</td><td>J-4, block B-1, Mohan Co-operative Industrial estate, Mathura road., New Delhi</td><td>New Delhi</td><td>Delhi</td><td>110044</td></tr>
+                                  <tr><td>SATA</td><td>M/s Nahar Logistics Park Pvt. Ltd, Khewat No. 79/80 & 39/59, Khasra No. 306,348/305, 48 & 56, Near Katana Sahib Gurudwara, Dist. Ludhiana</td><td>Ludhiana</td><td>Punjab</td><td>141113</td></tr>
+                                  <tr><td>SATB</td><td>H.B.No 212, situated in village katani kalan, sub ditrict sahnewal, Dist. Ludhiana</td><td>Ludhiana</td><td>Punjab</td><td>141113</td></tr>
+                                  <tr><td>SJAB</td><td>Plot No. 128 Jhotwara Industrial Area Jaipur</td><td>Jaipur</td><td>Rajasthan</td><td>302016</td></tr>
+                                  <tr><td>MAA5</td><td>Central Warehouse, 1, Arcot Road, Virugambakkam, Chennai</td><td>Chennai</td><td>Tamil Nadu</td><td>600092</td></tr>
+                                  <tr><td>SCJA</td><td>Central Warehouse No.2, Chinnasamynaidu Road, Siddhapudur, Coimbatore</td><td>Coimbatore</td><td>Tamil Nadu</td><td>641044</td></tr>
+                                  <tr><td>MAA4</td><td>Indo Space AS Industrial Park Private Limited, Survey No.139-157/2, Durainallur Village, Puduvoyal Post, Ponneri Taluk, Thiruvallur District</td><td>Chennai</td><td>Tamil Nadu</td><td>601206</td></tr>
+                                  <tr><td>SMAB</td><td>Shed No.k3, Survey Nos.402/1C2,402/1E2,402/1F2B,402/1G,402/1H, Village Kuthambakkam, Taluka, Poonamalle, District Thiruvallur</td><td>Chennai</td><td>Tamil Nadu</td><td>602103</td></tr>
+                                  <tr><td>HYD8</td><td>Survey no.99/1, Mamidipally Village, Shamshabad, Hyderabad</td><td>Hyderabad</td><td>Telangana</td><td>500409</td></tr>
+                                  <tr><td>SHYA</td><td>First and second Floors building bearing H.No.8-1-366/1, Tolichowki, Hyderabad</td><td>Hyderabad</td><td>Telangana</td><td>500008</td></tr>
+                                  <tr><td>SHYB</td><td>A2 and B2, Sy.no 14,14/part& 170, Somaram Village, Medchal</td><td>Hyderabad</td><td>Telangana</td><td>501401</td></tr>
+                                  <tr><td>SHYB</td><td>SY. NOs 241-244, 275-284, Penjerla (V), Kottur (M), Mahabubnagar dist., Hyderabad</td><td>Hyderabad</td><td>Telangana</td><td>509228</td></tr>
+                                  <tr><td>HYD7</td><td>SY. NOs 241-244, 275-284, Penjerla (V), Kottur (M), Mahabubnagar dist., Hyderabad</td><td>Hyderabad</td><td>Telangana</td><td>509228</td></tr>
+                                  <tr><td>SLKA</td><td>c/o Kuehne Nagel Pvt Limited Bijanaur Peppersand road, Khasara no 543, 544, 537, 540, 541, Near CRPF Camp, Lucknow</td><td>Lucknow</td><td>Uttar Pradesh</td><td>226008</td></tr>
+                                  <tr><td>SDEH</td><td>Khasra Nos.103,106,110 to 155, Village Galand, Pargana Dasana, Tehsil Dhaulana, District Hapur, National Highway</td><td>Hapur</td><td>Uttar Pradesh</td><td>245301</td></tr>
+                                  <tr><td>SCCA</td><td>Kuehne Nagel Pvt. Ltd., Dag No. 8-31, Dag No. 414-425 L R, Khatian No. 871, 798, Mouza-Simla & Pandit Satghara, JL No. 17-18, Shimla, Sreerampore, Hooghly, West Bengal</td><td>Hooghly</td><td>West Bengal</td><td>712203</td></tr>
+                                  <tr><td>SCCB</td><td>Taki road, Pirgacha Dist 24 Pgns(North), P.S.Duttapukur, Kolkata</td><td>Kolkata</td><td>West Bengal</td><td>700124</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">10</span>
+                            <h3>新加坡亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Zip</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>SIN8</td><td>5B Toh Guan Road East Level 3 Units 1/2/3</td><td>Singapore</td><td>Singapore</td><td>608829</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">11</span>
+                            <h3>澳大利亚亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Postal Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>MEL1</td><td>29 National Drive</td><td>Dandenong South</td><td>VIC</td><td>3175</td></tr>
+                                  <tr><td>BWU1</td><td>23 Centenary Ave</td><td>Moorebank</td><td>NSW</td><td>2170</td></tr>
+                                  <tr><td>BNE1</td><td>42-52 Export Street</td><td>Lytton</td><td>QLD</td><td>4178</td></tr>
+                                  <tr><td>PER2</td><td>60 Paltridge Road</td><td>Perth Airport</td><td>WA</td><td>6105</td></tr>
+                                  <tr><td>XAU2</td><td>Unit 2A, 5 Helles Avenue</td><td>Moorebank</td><td>NWS</td><td>2170</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">12</span>
+                            <h3>墨西哥亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Postal Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>MEX1</td><td>Camino a Coacalco 11A, Axotlan</td><td>Cuautitlan Izcalli</td><td>Mexico</td><td>54715</td></tr>
+                                  <tr><td>MEX2</td><td>Autopista Champa-Lecheria KM 2.5, San Martin Obispo</td><td>Cuautitlan Izcalli</td><td>Mexico</td><td>54913</td></tr>
+                                  <tr><td>MEX3</td><td>Prologis Park Grande, Edificio 1, Libramiento Norte No.87 Lote A, Col. Ricardo Flores Magon</td><td>Tepotzotlan</td><td>Mexico</td><td>54607</td></tr>
+                                  <tr><td>GDL1</td><td>Calle Alfonso Reyes 206, Parque industrial Tecnologico 4 (Pit 4), Zapote del Valle</td><td>Guadalajara</td><td>Jalisco</td><td>45672</td></tr>
+                                  <tr><td>MTY1</td><td>Apodaca Technology Park, Blvd. Guadalupe 403</td><td>Apodaca</td><td>Nuevo Leon</td><td>66627</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fba-country">
+                        <div class="fba-country-header" onclick="toggleCountry(this)">
+                            <span class="fba-country-number">13</span>
+                            <h3>捷克亚马逊FBA仓库地址清单</h3>
+                            <span class="fba-country-toggle">▼</span>
+                        </div>
+                        <div class="fba-country-content" style="display: none;">
+                            <div class="fba-table-wrapper">
+                            <table class="fba-table">
+                                <thead>
+                                    <tr>
+                                        <th>FBA Code</th>
+                                        <th>地址</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Postal Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>PRG2</td><td>DHL Solution Fashion GmbH Am Wald</td><td>Oranienburg</td><td>Oranienburg</td><td>16515</td></tr>
+                                  <tr><td>BRQ2</td><td>Padlých hrdinů</td><td>Kojetín</td><td>Olomoucký kraj</td><td>75201</td></tr>
+                                </tbody>
+                            </table>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
       <footer id="contact" class="site-footer" aria-label="页脚">
         <div class="container footer-grid">
