@@ -751,11 +751,11 @@
       reasonsSec.setAttribute('aria-hidden', 'true');
       reasonsSec.style.display = 'none';
     }
-    // 显示亚马逊仓库地址（在首页时也显示）
+    // 隐藏亚马逊仓库地址（首页不显示）
     if (fbaAddressSec) {
-      fbaAddressSec.hidden = false;
-      fbaAddressSec.setAttribute('aria-hidden', 'false');
-      fbaAddressSec.style.display = '';
+      fbaAddressSec.hidden = true;
+      fbaAddressSec.setAttribute('aria-hidden', 'true');
+      fbaAddressSec.style.display = 'none';
     }
     // 隐藏联系我们区块（首页不显示）
     if (contactInfoSec) {
