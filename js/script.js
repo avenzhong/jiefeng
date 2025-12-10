@@ -745,11 +745,11 @@
         sec.style.display = '';
       }
     });
-    // 显示选择理由
+    // 隐藏选择理由（首页不显示）
     if (reasonsSec) {
-      reasonsSec.hidden = false;
-      reasonsSec.setAttribute('aria-hidden', 'false');
-      reasonsSec.style.display = '';
+      reasonsSec.hidden = true;
+      reasonsSec.setAttribute('aria-hidden', 'true');
+      reasonsSec.style.display = 'none';
     }
     // 显示亚马逊仓库地址（在首页时也显示）
     if (fbaAddressSec) {
