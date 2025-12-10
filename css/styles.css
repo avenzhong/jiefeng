@@ -964,7 +964,7 @@ body.reasons-mode .slide {
 /* Floating contact */
 .floating-contact {
   position: fixed;
-  top: 50%;
+  top: 65%;
   right: 20px;
   transform: translateY(-50%);
   display: flex;
