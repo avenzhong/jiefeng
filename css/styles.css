@@ -597,33 +597,39 @@ body.reasons-mode .slide {
   background: linear-gradient(to bottom, #f8fafc, #ffffff);
   padding: 80px 0;
 }
+
+.contact-info-section .section-title {
+  margin-bottom: 10px;
+}
 .contact-info-section .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 .contact-info-content {
-  margin-top: 50px;
+  margin-top: 20px;
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 25px;
+  text-align: left;
 }
 .contact-vision {
   text-align: center;
-  padding: 30px 0;
-  border-bottom: 2px solid #e5e7eb;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e7eb;
 }
 .contact-vision p {
-  margin: 12px 0;
+  margin: 8px 0;
   color: #475569;
-  line-height: 1.8;
-  font-size: 17px;
+  line-height: 1.6;
+  font-size: 16px;
 }
 .contact-vision strong {
   color: var(--color-primary);
@@ -632,40 +638,41 @@ body.reasons-mode .slide {
 }
 .contact-card {
   background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  padding: 35px 30px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 25px;
 }
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 .contact-row {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  padding: 16px 0;
+  gap: 15px;
+  padding: 10px 0;
   border-bottom: 1px solid #f1f5f9;
 }
 .contact-row:last-of-type {
   border-bottom: none;
 }
 .contact-label {
-  min-width: 100px;
+  min-width: 80px;
   color: #64748b;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   flex-shrink: 0;
 }
 .contact-value {
   color: #1e293b;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.5;
   flex: 1;
+  text-align: left;
 }
 .contact-value a {
   color: var(--color-primary);
@@ -678,15 +685,15 @@ body.reasons-mode .slide {
 }
 .contact-qr {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 15px;
   border-top: 1px solid #f1f5f9;
 }
 .contact-qr img {
-  max-width: 180px;
+  max-width: 150px;
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 12px;
 }
 .contact-qr p {

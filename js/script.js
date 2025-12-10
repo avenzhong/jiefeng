@@ -337,43 +337,84 @@
     const href = link.getAttribute('href');
     if (!href) return;
     
+    // 跳过首页链接，由专门的事件监听器处理
+    if (href === '#hero') {
+      return;
+    }
+    
     // 处理产品服务链接
     if (href === '#fba-sea') {
       e.preventDefault();
       e.stopPropagation();
-      showSea();
-      closeNav();
-      closeAllDropdowns();
+      if (typeof showSea === 'function') {
+        showSea();
+      }
+      if (typeof closeNav === 'function') {
+        closeNav();
+      }
+      if (typeof closeAllDropdowns === 'function') {
+        closeAllDropdowns();
+      }
     } else if (href === '#fba-air') {
       e.preventDefault();
       e.stopPropagation();
-      showAir();
-      closeNav();
-      closeAllDropdowns();
+      if (typeof showAir === 'function') {
+        showAir();
+      }
+      if (typeof closeNav === 'function') {
+        closeNav();
+      }
+      if (typeof closeAllDropdowns === 'function') {
+        closeAllDropdowns();
+      }
     } else if (href === '#fba-railway') {
       e.preventDefault();
       e.stopPropagation();
-      showRailway();
-      closeNav();
-      closeAllDropdowns();
+      if (typeof showRailway === 'function') {
+        showRailway();
+      }
+      if (typeof closeNav === 'function') {
+        closeNav();
+      }
+      if (typeof closeAllDropdowns === 'function') {
+        closeAllDropdowns();
+      }
     } else if (href === '#warehousing') {
       e.preventDefault();
       e.stopPropagation();
-      showWare();
-      closeNav();
-      closeAllDropdowns();
+      if (typeof showWare === 'function') {
+        showWare();
+      }
+      if (typeof closeNav === 'function') {
+        closeNav();
+      }
+      if (typeof closeAllDropdowns === 'function') {
+        closeAllDropdowns();
+      }
     } else if (href === '#value-added') {
       e.preventDefault();
       e.stopPropagation();
-      showValue();
-      closeNav();
-      closeAllDropdowns();
+      if (typeof showValue === 'function') {
+        showValue();
+      }
+      if (typeof closeNav === 'function') {
+        closeNav();
+      }
+      if (typeof closeAllDropdowns === 'function') {
+        closeAllDropdowns();
+      }
     } else if (href === '#overseas') {
       e.preventDefault();
       e.stopPropagation();
-      showOverseas();
-      closeNav();
-      closeAllDropdowns();
+      if (typeof showOverseas === 'function') {
+        showOverseas();
+      }
+      if (typeof closeNav === 'function') {
+        closeNav();
+      }
+      if (typeof closeAllDropdowns === 'function') {
+        closeAllDropdowns();
+      }
     }
   }, true); // 使用捕获阶段确保优先处理
 
@@ -734,6 +775,9 @@
     document.body.classList.remove('reasons-mode');
     document.body.classList.remove('company-profile-mode');
     history.replaceState(null, '', '#');
+    
+    // 滚动到顶部
+    window.scrollTo(0, 0);
   }
 
   function showReasons() {
@@ -1006,12 +1050,15 @@
   }
 
   // 首页点击处理
-  $$("a[href='#hero']").forEach(a => a.addEventListener('click', (e) => {
-    e.preventDefault();
-    showHome();
-    closeNav();
-    closeAllDropdowns();
-  }));
+  $$("a[href='#hero']").forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      showHome();
+      closeNav();
+      closeAllDropdowns();
+    }, false); // 使用冒泡阶段，在事件委托之后执行
+  });
 
   // 选择理由点击处理
   $$("a[href='#reasons']").forEach(a => a.addEventListener('click', (e) => {
