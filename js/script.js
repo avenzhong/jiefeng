@@ -151,11 +151,12 @@
     const aboutSec = document.getElementById('about');
     const newsSec = document.getElementById('news');
     const fbaAddressSec = document.getElementById('fba-address');
+    const contactInfoSec = document.getElementById('contact-info');
     
     // 所有需要隐藏的区块（包括所有产品服务）
     const allSections = [
       companyProfileSec, coreBusinessSec, advantagesSec, partnersSec,
-      reasonsSec, aboutSec, newsSec, fbaAddressSec,
+      reasonsSec, aboutSec, newsSec, fbaAddressSec, contactInfoSec,
       seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
     ];
     
@@ -429,10 +430,11 @@
     const overseasSec = document.getElementById('overseas');
     
     const fbaAddressSec = document.getElementById('fba-address');
+    const contactInfoSec = document.getElementById('contact-info');
     
     // 隐藏所有其他区块，但保留轮播图、新闻和底部联系信息
     const allSections = [companyProfileSec, coreBusinessSec, advantagesSec, partnersSec, 
-                         reasonsSec, aboutSec, fbaAddressSec, seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec];
+                         reasonsSec, aboutSec, fbaAddressSec, contactInfoSec, seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec];
     allSections.forEach(sec => {
       if (sec && sec !== heroSec && sec !== contactSec) {
         sec.hidden = true;
@@ -692,6 +694,7 @@
 
   function showHome() {
     const fbaAddressSec = document.getElementById('fba-address');
+    const contactInfoSec = document.getElementById('contact-info');
     
     // 显示所有首页区块（包括轮播图、公司简介、核心业务、企业优势、合作伙伴、底部）
     homeSections.forEach(sec => {
@@ -712,6 +715,12 @@
       fbaAddressSec.hidden = false;
       fbaAddressSec.setAttribute('aria-hidden', 'false');
       fbaAddressSec.style.display = '';
+    }
+    // 隐藏联系我们区块（首页不显示）
+    if (contactInfoSec) {
+      contactInfoSec.hidden = true;
+      contactInfoSec.setAttribute('aria-hidden', 'true');
+      contactInfoSec.style.display = 'none';
     }
     // 隐藏所有动态区块（产品服务详情、新闻等）
     dynamicSections.forEach(sec => {
@@ -739,11 +748,12 @@
     const aboutSec = document.getElementById('about');
     const newsSec = document.getElementById('news');
     const fbaAddressSec = document.getElementById('fba-address');
+    const contactInfoSec = document.getElementById('contact-info');
     
     // 所有需要隐藏的区块（包括所有产品服务）
     const allSections = [
       companyProfileSec, coreBusinessSec, advantagesSec, partnersSec,
-      aboutSec, newsSec, fbaAddressSec,
+      aboutSec, newsSec, fbaAddressSec, contactInfoSec,
       seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
     ];
     
@@ -804,11 +814,12 @@
     const aboutSec = document.getElementById('about');
     const newsSec = document.getElementById('news');
     const reasonsSec = document.getElementById('reasons');
+    const contactInfoSec = document.getElementById('contact-info');
     
     // 所有需要隐藏的区块（包括所有产品服务）
     const allSections = [
       companyProfileSec, coreBusinessSec, advantagesSec, partnersSec,
-      aboutSec, newsSec, reasonsSec,
+      aboutSec, newsSec, reasonsSec, contactInfoSec,
       seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
     ];
     
@@ -855,8 +866,82 @@
     }, 100);
   }
 
+  function showContactInfo() {
+    const contactInfoSec = document.getElementById('contact-info');
+    if (!contactInfoSec) return;
+    
+    // 直接获取所有需要隐藏的section元素
+    const heroSec = document.getElementById('hero');
+    const companyProfileSec = document.getElementById('company-profile');
+    const coreBusinessSec = document.getElementById('core-business');
+    const advantagesSec = document.getElementById('advantages');
+    const partnersSec = document.querySelector('.partners-section');
+    const contactSec = document.getElementById('contact');
+    const aboutSec = document.getElementById('about');
+    const newsSec = document.getElementById('news');
+    const reasonsSec = document.getElementById('reasons');
+    const fbaAddressSec = document.getElementById('fba-address');
+    
+    // 所有需要隐藏的区块（包括所有产品服务）
+    const allSections = [
+      companyProfileSec, coreBusinessSec, advantagesSec, partnersSec,
+      aboutSec, newsSec, reasonsSec, fbaAddressSec,
+      seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
+    ];
+    
+    // 先隐藏所有区块
+    allSections.forEach(sec => {
+      if (sec) {
+        sec.hidden = true;
+        sec.setAttribute('aria-hidden', 'true');
+        sec.style.display = 'none';
+      }
+    });
+    
+    // 确保轮播图始终显示
+    if (heroSec) {
+      heroSec.hidden = false;
+      heroSec.setAttribute('aria-hidden', 'false');
+      heroSec.style.display = '';
+    }
+    
+    // 显示底部联系区块
+    if (contactSec) {
+      contactSec.hidden = false;
+      contactSec.setAttribute('aria-hidden', 'false');
+      contactSec.style.display = '';
+    }
+    
+    // 移除body上的特殊模式类
+    document.body.classList.remove('reasons-mode');
+    document.body.classList.remove('company-profile-mode');
+    
+    // 显示联系我们区块
+    contactInfoSec.hidden = false;
+    contactInfoSec.setAttribute('aria-hidden', 'false');
+    contactInfoSec.style.display = '';
+    
+    // 滚动到顶部，然后滚动到联系我们内容
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      const prev = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      contactInfoSec.scrollIntoView({ behavior: 'auto', block: 'start' });
+      history.replaceState(null, '', '#contact-info');
+      setTimeout(() => { document.documentElement.style.scrollBehavior = prev; }, 50);
+    }, 100);
+  }
+
+  function hideContactInfo() {
+    const contactInfoSec = document.getElementById('contact-info');
+    if (!contactInfoSec) return;
+    contactInfoSec.hidden = true;
+    contactInfoSec.setAttribute('aria-hidden', 'true');
+  }
+
   function showCompanyProfileMode() {
     const fbaAddressSec = document.getElementById('fba-address');
+    const contactInfoSec = document.getElementById('contact-info');
     
     // 隐藏所有其他区块，但保留轮播图、公司简介和底部
     [...homeSections, ...dynamicSections].forEach(sec => {
@@ -867,7 +952,7 @@
       }
     });
     
-    // 隐藏fba-address section和reasons section
+    // 隐藏fba-address section、reasons section和contact-info section
     if (fbaAddressSec) {
       fbaAddressSec.hidden = true;
       fbaAddressSec.setAttribute('aria-hidden', 'true');
@@ -877,6 +962,11 @@
       reasonsSec.hidden = true;
       reasonsSec.setAttribute('aria-hidden', 'true');
       reasonsSec.style.display = 'none';
+    }
+    if (contactInfoSec) {
+      contactInfoSec.hidden = true;
+      contactInfoSec.setAttribute('aria-hidden', 'true');
+      contactInfoSec.style.display = 'none';
     }
     
     // 显示轮播图区块
@@ -939,6 +1029,14 @@
     closeAllDropdowns();
   }));
 
+  // 联系我们点击处理
+  $$("a[href='#contact-info']").forEach(a => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    showContactInfo();
+    closeNav();
+    closeAllDropdowns();
+  }));
+
   // 公司简介点击处理
   $$("a[href='#company-profile']").forEach(a => a.addEventListener('click', (e) => {
     e.preventDefault();
@@ -950,7 +1048,7 @@
   // 其他导航链接处理（确保切换到首页模式）
   $$(".site-nav a[href^='#']").forEach(a => {
     const href = a.getAttribute('href');
-    if (href !== '#hero' && href !== '#reasons' && href !== '#company-profile' && href !== '#news' && href !== '#fba-address') {
+    if (href !== '#hero' && href !== '#reasons' && href !== '#company-profile' && href !== '#news' && href !== '#fba-address' && href !== '#contact-info') {
       a.addEventListener('click', () => {
         showHome(); // 切换到首页模式，显示所有内容
       });
@@ -965,6 +1063,8 @@
       showCompanyProfileMode();
     } else if (location.hash === '#fba-address') {
       showFbaAddress();
+    } else if (location.hash === '#contact-info') {
+      showContactInfo();
     } else {
       showHome();
     }
@@ -981,6 +1081,8 @@
       showReasons();
     } else if (location.hash === '#fba-address') {
       showFbaAddress();
+    } else if (location.hash === '#contact-info') {
+      showContactInfo();
     } else if (location.hash === '#news' || location.hash.match(/^#news-/)) {
       if (!handleNewsHash(true)) {
         showNews({ expand: false, scroll: true, updateHash: false });
