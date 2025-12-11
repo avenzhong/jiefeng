@@ -444,7 +444,7 @@ body {
   .news-entry h3 { margin: 0 0 8px; font-size: clamp(20px, 3vw, 26px); }
   .news-entry time { display: block; font-size: 14px; color: var(--color-muted); }
   .news-body p { margin: 0 0 12px; }
-  .news-entry img { display: block; max-width: 100%; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-sm); margin: 8px 0; }
+  .news-entry img { display: block; max-width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-sm); margin: 8px 0; }
 
   .news-nav { display: flex; gap: 12px; justify-content: flex-end; }
   .news-nav-btn { border: 1px solid rgba(2,6,23,.14); background: #fff; color: var(--color-text); padding: 8px 18px; border-radius: 999px; font-weight: 600; cursor: pointer; transition: background .2s ease, color .2s ease, border-color .2s ease; }
