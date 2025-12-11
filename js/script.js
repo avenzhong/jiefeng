@@ -737,14 +737,21 @@
     const fbaAddressSec = document.getElementById('fba-address');
     const contactInfoSec = document.getElementById('contact-info');
     
-    // 显示所有首页区块（包括轮播图、公司简介、核心业务、企业优势、合作伙伴、底部）
+    // 显示所有首页区块（包括轮播图、核心业务、企业优势、合作伙伴、底部）
+    // 注意：公司简介不在首页显示，只有点击"关于我们"时才显示
     homeSections.forEach(sec => {
-      if (sec) {
+      if (sec && sec !== companyProfileSec) {
         sec.hidden = false;
         sec.setAttribute('aria-hidden', 'false');
         sec.style.display = '';
       }
     });
+    // 隐藏公司简介区块（首页不显示，只有点击"关于我们"时才显示）
+    if (companyProfileSec) {
+      companyProfileSec.hidden = true;
+      companyProfileSec.setAttribute('aria-hidden', 'true');
+      companyProfileSec.style.display = 'none';
+    }
     // 隐藏选择理由（首页不显示）
     if (reasonsSec) {
       reasonsSec.hidden = true;
