@@ -686,20 +686,18 @@ body.reasons-mode .slide {
   max-height: 300px;
   height: auto;
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
 /* 中间图片更大以便看清，但宽度与上下两张完全一致 */
 .reasons-grid .reason-item:nth-child(2) img {
-  width: 90% !important;
-  max-width: 90% !important;
-  max-height: 500px;
+  width: 100% !important;
+  max-width: 100% !important;
+  max-height: 700px;
 }
 .reason-item img:hover {
   transform: scale(1.02);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
 }
 
 /* 联系我们信息展示样式 */
