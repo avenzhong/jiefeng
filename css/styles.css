@@ -1052,8 +1052,9 @@ body.reasons-mode .slide {
 .footer-brand p { color: rgba(255,255,255,.8); }
 .footer-brand p strong { color: #fff; font-weight: 600; }
 .footer-contact { color: #fff; }
-.footer-contact h3 { color: #fff; margin: 0 0 16px; font-size: inherit; }
-.footer-contact ul { color: rgba(255,255,255,.9); }
+.footer-contact h3 { color: #fff; margin: 0 0 16px; font-size: inherit; padding: 0; text-align: left; }
+.footer-contact ul { color: rgba(255,255,255,.9); margin: 0; padding: 0; list-style: none; text-align: left; }
+.footer-contact ul li { margin: 0 0 8px 0; padding: 0; line-height: 1.8; }
 .footer-contact a { color: rgba(255,255,255,.9); }
 .footer-contact a:hover { color: #fff; }
 .footer-brand .footer-logo { width: 60px; height: auto; max-height: 60px; border-radius: 8px; object-fit: contain; flex-shrink: 0; }
