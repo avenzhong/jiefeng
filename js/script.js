@@ -152,13 +152,21 @@
     const newsSec = document.getElementById('news');
     const fbaAddressSec = document.getElementById('fba-address');
     const contactInfoSec = document.getElementById('contact-info');
-    
+    const companyIntroHero = document.querySelector('.company-intro-hero');
+
     // 所有需要隐藏的区块（包括所有产品服务）
     const allSections = [
       companyProfileSec, coreBusinessSec, advantagesSec, partnersSec,
       reasonsSec, aboutSec, newsSec, fbaAddressSec, contactInfoSec,
       seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
     ];
+    
+    // 隐藏公司简介英雄区块（只在首页显示）
+    if (companyIntroHero) {
+      companyIntroHero.hidden = true;
+      companyIntroHero.setAttribute('aria-hidden', 'true');
+      companyIntroHero.style.display = 'none';
+    }
     
     // 先隐藏所有区块
     allSections.forEach(sec => {
@@ -468,6 +476,7 @@
     const railwaySec = document.getElementById('fba-railway');
     const wareSec = document.getElementById('warehousing');
     const valueSec = document.getElementById('value-added');
+    const companyIntroHero = document.querySelector('.company-intro-hero');
     const overseasSec = document.getElementById('overseas');
     
     const fbaAddressSec = document.getElementById('fba-address');
@@ -488,6 +497,12 @@
       reasonsSec.hidden = true;
       reasonsSec.setAttribute('aria-hidden', 'true');
       reasonsSec.style.display = 'none';
+    }
+    // 隐藏公司简介英雄区块（只在首页显示）
+    if (companyIntroHero) {
+      companyIntroHero.hidden = true;
+      companyIntroHero.setAttribute('aria-hidden', 'true');
+      companyIntroHero.style.display = 'none';
     }
     // 确保轮播图始终显示
     if (heroSec) {
@@ -736,6 +751,7 @@
   function showHome() {
     const fbaAddressSec = document.getElementById('fba-address');
     const contactInfoSec = document.getElementById('contact-info');
+    const companyIntroHero = document.querySelector('.company-intro-hero');
     
     // 显示所有首页区块（包括轮播图、核心业务、企业优势、合作伙伴、底部）
     // 注意：公司简介不在首页显示，只有点击"关于我们"时才显示
@@ -746,6 +762,13 @@
         sec.style.display = '';
       }
     });
+    
+    // 显示公司简介英雄区块（只在首页显示）
+    if (companyIntroHero) {
+      companyIntroHero.hidden = false;
+      companyIntroHero.setAttribute('aria-hidden', 'false');
+      companyIntroHero.style.display = '';
+    }
     // 隐藏公司简介区块（首页不显示，只有点击"关于我们"时才显示）
     if (companyProfileSec) {
       companyProfileSec.hidden = true;
@@ -800,6 +823,7 @@
     const newsSec = document.getElementById('news');
     const fbaAddressSec = document.getElementById('fba-address');
     const contactInfoSec = document.getElementById('contact-info');
+    const companyIntroHero = document.querySelector('.company-intro-hero');
     
     // 所有需要隐藏的区块（包括所有产品服务）
     const allSections = [
@@ -807,6 +831,13 @@
       aboutSec, newsSec, fbaAddressSec, contactInfoSec,
       seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
     ];
+    
+    // 隐藏公司简介英雄区块（只在首页显示）
+    if (companyIntroHero) {
+      companyIntroHero.hidden = true;
+      companyIntroHero.setAttribute('aria-hidden', 'true');
+      companyIntroHero.style.display = 'none';
+    }
     
     // 先隐藏所有区块
     allSections.forEach(sec => {
@@ -866,6 +897,7 @@
     const newsSec = document.getElementById('news');
     const reasonsSec = document.getElementById('reasons');
     const contactInfoSec = document.getElementById('contact-info');
+    const companyIntroHero = document.querySelector('.company-intro-hero');
     
     // 所有需要隐藏的区块（包括所有产品服务）
     const allSections = [
@@ -873,6 +905,13 @@
       aboutSec, newsSec, reasonsSec, contactInfoSec,
       seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
     ];
+    
+    // 隐藏公司简介英雄区块（只在首页显示）
+    if (companyIntroHero) {
+      companyIntroHero.hidden = true;
+      companyIntroHero.setAttribute('aria-hidden', 'true');
+      companyIntroHero.style.display = 'none';
+    }
     
     // 先隐藏所有区块
     allSections.forEach(sec => {
@@ -932,6 +971,7 @@
     const newsSec = document.getElementById('news');
     const reasonsSec = document.getElementById('reasons');
     const fbaAddressSec = document.getElementById('fba-address');
+    const companyIntroHero = document.querySelector('.company-intro-hero');
     
     // 所有需要隐藏的区块（包括所有产品服务）
     const allSections = [
@@ -939,6 +979,13 @@
       aboutSec, newsSec, reasonsSec, fbaAddressSec,
       seaSec, airSec, railwaySec, wareSec, valueSec, overseasSec
     ];
+    
+    // 隐藏公司简介英雄区块（只在首页显示）
+    if (companyIntroHero) {
+      companyIntroHero.hidden = true;
+      companyIntroHero.setAttribute('aria-hidden', 'true');
+      companyIntroHero.style.display = 'none';
+    }
     
     // 先隐藏所有区块
     allSections.forEach(sec => {
@@ -993,7 +1040,8 @@
   function showCompanyProfileMode() {
     const fbaAddressSec = document.getElementById('fba-address');
     const contactInfoSec = document.getElementById('contact-info');
-    
+    const companyIntroHero = document.querySelector('.company-intro-hero');
+
     // 隐藏所有其他区块，但保留轮播图、公司简介和底部
     [...homeSections, ...dynamicSections].forEach(sec => {
       if (sec && sec !== heroSec && sec !== companyProfileSec && sec !== contactSec) {
@@ -1002,6 +1050,13 @@
         sec.style.display = 'none';
       }
     });
+    
+    // 隐藏公司简介英雄区块（只在首页显示）
+    if (companyIntroHero) {
+      companyIntroHero.hidden = true;
+      companyIntroHero.setAttribute('aria-hidden', 'true');
+      companyIntroHero.style.display = 'none';
+    }
     
     // 隐藏fba-address section、reasons section和contact-info section
     if (fbaAddressSec) {

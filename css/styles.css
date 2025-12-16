@@ -496,6 +496,9 @@ body.company-profile-mode main {
 body.company-profile-mode section:not(#company-profile):not(#hero):not(.site-footer):not(#contact) {
   display: none !important;
 }
+body.company-profile-mode .company-intro-hero {
+  display: none !important;
+}
 
 body.company-profile-mode #company-profile {
   position: static;
@@ -546,6 +549,9 @@ body.reasons-mode main {
 
 body.reasons-mode section:not(#reasons):not(#hero):not(.partners-section):not(.site-footer):not(#contact) {
   display: none !important; /* 只隐藏非相关区块 */
+}
+body.reasons-mode .company-intro-hero {
+  display: none !important;
 }
 
 body.reasons-mode #reasons {
