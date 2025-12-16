@@ -567,7 +567,14 @@
     if (!newsSection) return;
     const target = newsEntries.find(entry => entry.id === id);
     if (!target) return;
-    if (expand) enterNewsDetail();
+    if (expand) {
+      enterNewsDetail();
+    } else {
+      // 如果当前是展开状态，退出展开状态
+      if (newsSection.classList.contains('is-expanded')) {
+        exitNewsDetail({ focusList: false, updateHash: false });
+      }
+    }
     newsEntries.forEach(entry => {
       const isActive = entry === target;
       entry.hidden = !isActive;
@@ -606,9 +613,24 @@
     return false;
   }
 
+  // 点击卡片其他位置：只在右边显示详情，不展开
   newsCards.forEach(card => {
-    card.addEventListener('click', () => {
-      activateNews(card.dataset.target, { scroll: false, expand: true });
+    card.addEventListener('click', (e) => {
+      // 如果点击的是"查看详情"按钮，不处理（由按钮自己的事件处理）
+      if (e.target.classList.contains('news-view-detail')) {
+        return;
+      }
+      activateNews(card.dataset.target, { scroll: false, expand: false });
+    });
+  });
+  
+  // 点击"查看详情"按钮：展开详情（和现在效果一样）
+  const newsViewDetailBtns = newsSection ? $$('.news-view-detail', newsSection) : [];
+  newsViewDetailBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation(); // 阻止事件冒泡到卡片
+      const targetId = btn.dataset.target;
+      activateNews(targetId, { scroll: false, expand: true });
     });
   });
   newsNavBtns.forEach(btn => {

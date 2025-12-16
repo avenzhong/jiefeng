@@ -442,6 +442,9 @@ body {
   .news-meta { font-size: 13px; color: var(--color-muted); }
   .news-card.is-active { border-color: rgba(14,165,233,.6); box-shadow: var(--shadow-md); transform: translateY(-2px); }
   .news-card:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+  .news-view-detail { margin-top: 8px; padding: 6px 16px; background: var(--color-primary); color: #fff; border: none; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .2s ease, transform .2s ease; align-self: flex-start; }
+  .news-view-detail:hover { background: #0284c7; transform: translateY(-1px); }
+  .news-view-detail:active { transform: translateY(0); }
 
   .news-detail { background: var(--color-card); border-radius: var(--radius); padding: clamp(18px, 4vw, 28px); box-shadow: var(--shadow-md); border: 1px solid rgba(2,6,23,.06); display: grid; gap: 16px; min-height: 360px; position: relative; width: 100%; box-sizing: border-box; justify-items: stretch; overflow: hidden; }
   .news-detail > * { max-width: 100%; }
