@@ -1046,6 +1046,10 @@ body.reasons-mode .slide {
   filter: grayscale(0.2);
   transition: filter 0.3s ease;
 }
+.partners-section .partners-grid img.partner-large {
+  transform: scale(1.5);
+  object-fit: contain;
+}
 .partners-section .partners-grid .card:hover img {
   filter: grayscale(0);
 }
