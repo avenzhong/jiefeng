@@ -636,7 +636,7 @@ body.reasons-mode .slide {
 /* Reasons Section */
 .reasons-section { 
   background: #fff; 
-  padding: 80px 0;
+  padding: 50px 0;
 }
 .reasons-section .container {
   width: var(--container);
@@ -645,7 +645,7 @@ body.reasons-mode .slide {
 }
 .reasons-section .section-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   font-size: 32px;
   color: #333;
 }
@@ -675,19 +675,14 @@ body.reasons-mode .slide {
 .reasons-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-rows: repeat(1, 1fr);
+  gap: 6px;
   align-items: center;
   justify-items: center;
   width: 100%;
   max-width: 100%;
 }
-.reason-item {
-  display: grid;
-  place-items: center;
-  width: 100%;
-}
-.reason-item img {
+.reasons-grid img {
   width: 90%;
   max-width: 90%;
   max-height: 300px;
@@ -698,12 +693,12 @@ body.reasons-mode .slide {
 }
 
 /* 中间图片更大以便看清，但宽度与上下两张完全一致 */
-.reasons-grid .reason-item:nth-child(2) img {
+.reasons-grid img:nth-child(2) {
   width: 100% !important;
   max-width: 100% !important;
   max-height: 700px;
 }
-.reason-item img:hover {
+.reasons-grid img:hover {
   transform: scale(1.02);
 }
 
@@ -1211,7 +1206,7 @@ body.reasons-mode .slide {
 @media (max-width: 1024px) {
   .card-grid.four { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(3, 1fr); }
-  .reasons-grid { gap: 20px; }
+  .reasons-grid { gap: 6px; }
   .partners-section .partners-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .partners-section .partners-grid .card { padding: 12px; }
   .partners-grid { grid-template-columns: repeat(4, 1fr); }
@@ -1231,7 +1226,7 @@ body.reasons-mode .slide {
   .brand-logo { width: 50px; height: 50px; }
   .brand-name { font-size: 24px; }
   .card-grid.three { grid-template-columns: 1fr; }
-  .reasons-grid { gap: 20px; }
+  .reasons-grid { gap: 6px; }
   .fba-address-section { padding: 40px 0; }
   .fba-address-section .section-title { font-size: 24px; }
   .fba-address-content { padding: 0; }
