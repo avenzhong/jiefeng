@@ -675,12 +675,13 @@ body.reasons-mode .slide {
 .reasons-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(1, 1fr);
-  gap: 6px;
+  grid-template-rows: auto auto auto;
+  gap: 40px;
   align-items: center;
   justify-items: center;
   width: 100%;
   max-width: 100%;
+  overflow: visible;
 }
 .reasons-grid img {
   width: 90%;
@@ -692,11 +693,15 @@ body.reasons-mode .slide {
   transition: transform 0.3s ease;
 }
 
-/* 中间图片更大以便看清，但宽度与上下两张完全一致 */
-.reasons-grid img:nth-child(2) {
+/* 中间图片更大以便看清，固定尺寸 */
+.reasons-grid img:nth-child(2),
+.reasons-grid img.reason-large {
   width: 100% !important;
   max-width: 100% !important;
-  max-height: 700px;
+  height: 800px !important;
+  max-height: 800px !important;
+  object-fit: contain;
+  border-radius: 50%;
 }
 .reasons-grid img:hover {
   transform: scale(1.02);
